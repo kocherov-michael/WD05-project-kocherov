@@ -1,0 +1,24 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Вход/Регистрация(Гость) - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35.dark-bg
+            h1 Вход/Регистрация(Гость)
+
+            .section-ui
+                include ../../sections/sign-in-guest.pug
+
+            pre.
+                include ../../sections/sign-in-guest.pug
+
+            .title sections/sign-in-guest.pug
+            pre.
+                div.sign-in-guest
+                    span
+                        a(href="#") Регистрация
+                    span
+                        a(href="#") Вход

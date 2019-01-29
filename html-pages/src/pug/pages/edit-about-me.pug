@@ -1,0 +1,35 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Редактировать - Обо Мне';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-45.pl-20
+				.row
+					.offset-md-1.col-md-10
+						h1.title-1 Редактировать - Обо Мне
+						form.edit-about-me-form
+							.row.edit-about-me-form__row
+								.col
+									+labelInputText("Имя, фамилия", "Юрий Ключевский", "name")
+							.row.edit-about-me-form__row
+								.col
+									+loadFile("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей и весом до 2Мб.")
+									.edit-about-me__avatar.mt-15
+										+avatarBig('avatar-1-big.jpg')
+							.row.edit-about-me-form__row
+								.col
+									+labelTextarea("Информация на главной", "Я веб разработчик из Казани. Мне 28 лет. Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.", "name")
+							.row.edit-user-profile-form__row
+								.form-button-save
+									+buttonSave('Сохранить', '', '', 'submit', 'data-edit')
+								.form-button-cancel
+									button.button(type="reset") Отмена
+
+		include ../sections/footer.pug

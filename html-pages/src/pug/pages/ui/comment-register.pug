@@ -1,0 +1,24 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Комментарий - Зарегистрироваться - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Комментарий - Зарегистрироваться
+			
+			.section-ui
+				+comment-register("#!", "#!")
+
+			pre.
+				+comment-register("#!", "#!")
+			
+			.title mixins/_comment-register.pug
+			pre.
+				mixin comment-register(linkSignIn, linkRegister)
+					.comment__register.text-center
+						| #{'#[a(href= linkSignIn) Войдите]'} или #{'#[a(href= linkRegister) зарегистрируйтесь]'}
+						br
+						| чтобы оставить комментарий

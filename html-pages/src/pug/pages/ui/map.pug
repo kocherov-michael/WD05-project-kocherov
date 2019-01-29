@@ -1,0 +1,20 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Google карта - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+    
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+            h1 Google карта
+            
+            .section-ui
+                include ../../sections/map.pug
+
+            pre.
+                include ../../sections/map.pug
+
+            .title sections/map.pug
+            pre.
+                .map#map

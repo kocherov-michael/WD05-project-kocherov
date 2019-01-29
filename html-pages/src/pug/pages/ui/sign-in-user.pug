@@ -1,0 +1,20 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Вход/Регистрация(Пользователь) - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35.dark-bg
+            h1 Вход/Регистрация(Пользователь)
+
+            .section-ui
+                include ../../sections/sign-in-user.pug
+
+            pre.
+                include ../../sections/sign-in-user.pug
+
+            .title sections/sign-in-user.pug
+            pre.
+                +sign-in-user('avatar-1-big.jpg', 'Юрий Ключевский')

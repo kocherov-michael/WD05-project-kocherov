@@ -1,0 +1,45 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Загрузка файлов - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Загрузка файлов
+
+			.section-ui
+				+loadFile("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей и весом до 2Мб.")
+			.section-ui
+				+loadFile("Прикрепить файл", "jpg, png, pdf, doc, весом до 2Мб.", "radius")
+			pre.
+				+loadFile("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей и весом до 2Мб.")
+				
+				+loadFile("Прикрепить файл", "jpg, png, pdf, doc, весом до 2Мб.", "radius")
+
+			pre.
+				Для использования миксина кнопки загрузки файла в него передаются параметры вида "Заголовок","Описание".
+				Если нужна скруглённая кнопка - дополнительно передается третий параметр "radius". Например:
+
+				+loadFile("Заголовок", "Описание")
+
+				+loadFile("Заголовок", "Описание", "radius")
+
+			.title mixins/_load-file.pug
+			pre.
+				mixin loadFile(title, opis, type)
+					if type
+						.load-file-title #{title}		
+						.load-file-opis #{opis}
+						.load-file-fieldset
+							input#file.inputfile.inputfile-rad(type='file', name='file', data-multiple-caption='{count} файлов выбрано', multiple='')
+							label(for='file') Выбрать файл
+							span Файл не выбран
+					else
+						.load-file-title #{title}		
+						.load-file-opis #{opis}
+						.load-file-fieldset
+							input#file-2.inputfile(type='file', name='file-2', data-multiple-caption='{count} файлов выбрано',multiple='')
+							label(for='file-2') Выбрать файл
+							span Файл не выбран

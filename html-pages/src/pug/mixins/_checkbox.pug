@@ -1,0 +1,11 @@
+mixin checkbox(text, attr)
+	if attr
+		label.form-label
+			input(type="checkbox" name="checkbox" checked).form-input-checkbox
+			span.form__checkbox
+			|#{text}
+	else
+		label.form-label
+			input(type="checkbox" name="checkbox").form-input-checkbox
+			span.form__checkbox
+			|#{text}

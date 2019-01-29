@@ -1,0 +1,33 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Оставить коментарий - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Оставить коментарий
+			
+			.section-ui
+
+				include ../../sections/leave-comment.pug
+
+			pre.
+				include ../../sections/leave-comment.pug
+			
+			.title sections/leave-comment.pug
+			pre.
+				.title-2 Оставить комментарий
+				.leave-comment
+					.leave-comment-avatar
+						+avatar('avatar-1.jpg')
+
+					form.leave-comment-form
+						.leave-comment-form__name Юрий Ключевский
+						+notification__error('Комментарий не может быть пустым.')
+						.mb-10
+
+						+textarea("Присоединиться к обсуждению...")
+						.mb-10
+						+button('Опубликовать', '', '', 'submit', 'button')

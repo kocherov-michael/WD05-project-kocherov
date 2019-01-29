@@ -1,0 +1,31 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Пост в блоге - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Пост в блоге
+			.section-ui
+				include ../../sections/blog-post.pug
+			pre.
+				include ../../sections/blog-post.pug
+
+			.title sections/blog-post.pug
+			pre.
+				.blog-post
+					.blog-post-heading-wrapper
+						h1.blog-post__title.title-1 Национальный парк Йосемити
+						.blog-post__info
+							.blog-post__info-name Емельян Казаков
+							.blog-post__info-category
+								a(href="#!") Путешествия
+							.blog-post__info-date 16 Марта 2017
+							.blog-post__info-comment-count
+								a(href="#!") 2 комментария
+					img(src="../img/blog/yosemite-park.png").blog-post__image
+					.blog-post__content
+						p Парк находится в горах #[a(href="#!") Сьерра-Невада] на востоке штата Калифорния и занимает огромную даже для Америки...
+						p Центром парка является долина #[a(href="#!") Йосемити], круглый год переполненная туристами, зато в большей части...

@@ -1,0 +1,31 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+    - var title = 'Блог';
+    - var pageClass = 'content-page';
+
+block content
+    .sticky-footer-wrapper
+        include ../sections/admin-panel.pug
+        include ../sections/header-admin.pug
+
+        .sticky-footer-content
+            .container.user-content.pt-80
+
+                div.blog__header.mb-50
+                    span Блог веб-разработчика
+                    +buttonEdit('Добавить пост', '', '', 'submit', 'name')
+                div.row.justify-content-between.mb-50
+                    +cardPost('Поездка в New York', '#!', "../img/thumbs/post-thumb3.png")
+                    +cardPost('Что я делал в долине', '#!', "../img/thumbs/post-thumb1.png")
+                    +cardPost('Как я ходил в поход этим летом', '#!', "../img/thumbs/post-thumb2.png")
+                div.row.justify-content-between.mb-50
+                    +cardPost('Поездка в New York пример длинного названия поста ...', '#!', "../img/thumbs/post-thumb.png")
+                    +cardPost('Что я делал в долине', '#!', "../img/thumbs/post-thumb1.png")
+                    +cardPost('Как я ходил в поход этим летом', '#!', "../img/thumbs/post-thumb4.png")
+                div.row.justify-content-between.mb-90
+                    +cardPost('Поездка в New York', '#!', "../img/thumbs/post-thumb3.png")
+                    +cardPost('Что я делал в долине', '#!', "../img/thumbs/post-thumb1.png")
+                    +cardPost('Как я ходил в поход этим летом', '#!', "../img/thumbs/post-thumb2.png")
+
+        include ../sections/footer.pug

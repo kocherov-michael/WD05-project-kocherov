@@ -1,0 +1,18 @@
+<!-- build:jsLibs js/libs.js -->
+script(src="./libs/jquery/jquery.min.js")
+<!-- endbuild -->
+
+<!-- build:jsVendor js/vendor.js -->
+block scripts
+	script(src="./libs/jquery-custom-scrollbar/jquery.custom-scrollbar.js")
+	//- скрипт который показывает google карту
+	script(src="./js/custom-file-input.js")
+	//- скрипт который кастомизирует форму выбора файлоф для загрузки	
+<!-- endbuild -->
+
+<!-- build:jsMain js/main.js -->
+script(src="./js/main.js")
+<!-- endbuild -->
+
+block cdnscripts
+	script(defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js")

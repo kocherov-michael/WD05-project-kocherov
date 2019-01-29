@@ -1,0 +1,117 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Кнопки - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Кнопки большие
+			.section-ui
+				.buttons-container--ui-kit
+					+buttonBackward('Назад', '#!')
+					.pr-10
+					+buttonForward('Вперед', '#!')
+					.pr-10
+					+button('Подробнее', '#!')
+					.pr-10
+					+buttonEdit('Редактировать', '#!')
+					.pr-10
+					+buttonDelete('Удалить', '#!')
+					.pr-10
+					+buttonSave('Сохранить', '#!')
+					.pr-10
+					+buttonEnter('Войти', '#!')
+			pre.
+				+buttonBackward('Назад', '#!')
+				+buttonForward('Вперед', '#!')
+				+button('Подробнее', '#!')
+				+buttonEdit('Редактировать', '#!')
+				+buttonDelete('Удалить', '#!')
+				+buttonSave('Сохранить', '#!')
+				+buttonEnter('Войти', '#!')
+				+buttonProfile('Профиль', '#!')
+			hr
+			h1 Кнопка Профиль
+			.section-ui
+				+buttonProfile('Профиль', '#!')
+			pre.
+				+buttonProfile('Профиль', '#!')
+			hr
+			h1 Кнопки малые
+			.section-ui
+				.buttons-container--ui-kit
+					+buttonBackward('Назад', '#!', 'small')
+					.pr-10
+					+buttonForward('Вперед', '#!', 'small')
+					.pr-10
+					+button('Подробнее', '#!', 'small')
+					.pr-10
+					+buttonEdit('Редактировать', '#!', 'small')
+					.pr-10
+					+buttonDelete('Удалить', '#!', 'small')
+					.pr-10
+					+buttonSave('Сохранить', '#!', 'small')
+					.pr-10
+					+buttonEnter('Войти', '#!', 'small')
+			pre.
+				+buttonBackward('Назад', '#!', 'small')
+				+buttonForward('Вперед', '#!', 'small')
+				+button('Подробнее', '#!', 'small')
+				+buttonEdit('Редактировать', '#!', 'small')
+				+buttonDelete('Удалить', '#!', 'small')
+				+buttonSave('Сохранить', '#!', 'small')
+				+buttonEnter('Войти', '#!', 'small')
+				+buttonProfile('Профиль', '#!', 'small')
+			hr
+			h1 Инпуты большие
+			.section-ui
+				.buttons-container--ui-kit
+					+buttonBackward('Назад', '', '', 'submit', 'name')
+					.pr-10
+					+buttonForward('Вперед', '', '', 'submit', 'name')
+					.pr-10
+					+button('Подробнее', '', '', 'submit', 'name')
+					.pr-10
+					+buttonEdit('Редактировать', '', '', 'submit', 'name')
+					.pr-10
+					+buttonDelete('Удалить', '', '', 'submit', 'name')
+					.pr-10
+					+buttonSave('Сохранить', '', '', 'submit', 'name')
+					.pr-10
+					+buttonEnter('Войти', '', '', 'submit', 'name')
+			pre.
+				+buttonBackward('Назад', '', '', 'submit', 'name')
+				+buttonForward('Вперед', '', '', 'submit', 'name')
+				+button('Подробнее', '', '', 'submit', 'name')
+				+buttonEdit('Редактировать', '', '', 'submit', 'name')
+				+buttonDelete('Удалить', '', '', 'submit', 'name')
+				+buttonSave('Сохранить', '', '', 'submit', 'name')
+				+buttonEnter('Войти', '', '', 'submit', 'name')
+			hr
+			h1 Инпуты малые
+			.section-ui
+				.buttons-container--ui-kit
+					+buttonBackward('Назад', '', 'small', 'submit', 'name')
+					.pr-10
+					+buttonForward('Вперед', '', 'small', 'submit', 'name')
+					.pr-10
+					+button('Подробнее', '', 'small', 'submit', 'name')
+					.pr-10
+					+buttonEdit('Редактировать', '', 'small', 'submit', 'name')
+					.pr-10
+					+buttonDelete('Удалить', '', 'small', 'submit', 'name')
+					.pr-10
+					+buttonSave('Сохранить', '', 'small', 'submit', 'name')
+					.pr-10
+					+buttonEnter('Войти', '', 'small', 'submit', 'name')
+			pre.
+				+buttonBackward('Назад', '', 'small', 'submit', 'name')
+				+buttonForward('Вперед', '', 'small', 'submit', 'name')
+				+button('Подробнее', '', 'small', 'submit', 'name')
+				+buttonEdit('Редактировать', 'small', '', 'submit', 'name')
+				+buttonDelete('Удалить', '', 'small', 'submit', 'name')
+				+buttonSave('Сохранить', '', 'small', 'submit', 'name')
+				+buttonEnter('Войти', '', 'small', 'submit', 'name')
+	

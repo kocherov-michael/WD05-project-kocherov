@@ -1,0 +1,35 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+    - var title = 'Работы';
+    - var pageClass = 'content-page';
+
+block content
+    .sticky-footer-wrapper
+        include ../sections/admin-panel.pug
+        include ../sections/header-admin.pug
+
+        .sticky-footer-content
+            .container.user-content.pt-80
+                div.works__header.mb-50
+                    span
+                        strong Работы
+                        =' '
+                        | которые сделал я и моя команда
+                    +buttonEdit('Добавить работу', '', '', 'submit', 'name')
+
+                div.row.justify-content-between.mb-50
+                    +cardPortfolio('Верстка Landing Page', '#!', "../img/thumbs/portfolio-thumb.png")
+                    +cardPortfolio('Верстка UI набора', '#!', "../img/thumbs/portfolio-thumb1.png")
+                    +cardPortfolio('Верстка интернет магазина', '#!', "../img/thumbs/portfolio-thumb2.png")
+                div.row.justify-content-between.mb-50
+                    +cardPortfolio('Верстка Landing Page', '#!', "../img/thumbs/portfolio-thumb.png")
+                    +cardPortfolio('Верстка UI набора', '#!', "../img/thumbs/portfolio-thumb1.png")
+                    +cardPortfolio('Верстка интернет магазина', '#!', "../img/thumbs/portfolio-thumb2.png")
+                div.row.justify-content-between.mb-90
+                    +cardPortfolio('Верстка Landing Page', '#!', "../img/thumbs/portfolio-thumb.png")
+                    +cardPortfolio('Верстка UI набора', '#!', "../img/thumbs/portfolio-thumb1.png")
+                    +cardPortfolio('Верстка интернет магазина', '#!', "../img/thumbs/portfolio-thumb2.png")
+
+
+        include ../sections/footer.pug

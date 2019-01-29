@@ -1,0 +1,13 @@
+mixin cardPost(title, link, image)
+	.card-post
+		.card-post__image.mb-15
+			img(src= image, alt= title)
+		.card-post__title #{title}
+		+button('Читать', link)
+
+mixin cardPortfolio(title, link, image)
+	.card-portfolio
+		.card-portfolio__image.mb-15
+			img(src= image, alt= title)
+		.card-portfolio__title.ml-20 #{title}
+		+button('Смотреть кейс', link)

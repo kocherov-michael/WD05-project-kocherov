@@ -1,0 +1,34 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Чекбокс - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Чекбокс
+			
+			.section-ui
+				+checkbox('Запомнить меня')
+			.section-ui
+				+checkbox('Запомнить меня','checked')
+
+			pre.
+				+checkbox('Запомнить меня')
+			pre.
+				+checkbox('Запомнить меня','checked')
+			
+			.title mixins/_checkbox.pug
+			pre.
+				mixin checkbox(text, attr)
+					if attr
+						label.form-label
+							input(type="checkbox" name="checkbox" checked).form-input-checkbox
+							span.form__checkbox
+							|  #{'#{text}'}
+					else
+						label.form-label
+							input(type="checkbox" name="checkbox").form-input-checkbox
+							span.form__checkbox
+							| #{'#{text}'}

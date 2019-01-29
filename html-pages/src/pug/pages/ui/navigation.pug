@@ -1,0 +1,43 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Вход/Регистрация(Гость) - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35.dark-bg
+            h1 Вход/Регистрация(Гость)
+
+            .section-ui
+                -
+                    var navigation = [
+                    {name: 'Главная', link: '#'},
+                    {name: 'Обо мне', link: '#'},
+                    {name: 'Работы', link: '#'},
+                    {name: 'Блог', link: '#'},
+                    {name: 'Контакты', link: '#'}
+                    ];
+
+                +navigation(navigation)
+
+
+            pre.
+                -
+                   var navigation = [
+                   {name: 'Главная', link: '#'},
+                   {name: 'Обо мне', link: '#'},
+                   {name: 'Работы', link: '#'},
+                   {name: 'Блог', link: '#'},
+                   {name: 'Контакты', link: '#'}
+                   ];
+                +navigation(navigation)
+
+            .title mixins/_navigation.pug
+            pre.
+                mixin navigation(navigation)
+                    nav.navigation
+                        ul
+                            each item in navigation
+                                li
+                                    a(href= item.link)= item.name

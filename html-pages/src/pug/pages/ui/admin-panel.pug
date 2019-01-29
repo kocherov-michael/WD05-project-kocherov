@@ -1,0 +1,54 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+						
+block variables
+	- var title = 'Панель администратора - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35.dark-bg
+			h1 Панель администратора
+			
+			.section-ui
+
+				include ../../sections/admin-panel.pug
+
+
+			pre.
+				include ../../sections/admin-panel.pug			
+
+			.title sections/admin-panel.pug
+
+			pre.
+				.admin-panel
+					.admin-panel-user
+						+avatar('avatar-1.jpg')
+						.admin-panel-user-wrap
+							.admin-panel-user-wrap__name Юрий Ключевский
+							+badge("Администратор", "!#")
+					nav.admin-panel-menu
+						
+						a(href="#!").admin-panel-menu__link
+							i(class="fas fa-plus-circle admin-panel-menu__icon")
+							|Пост
+						
+						a(href="#!").admin-panel-menu__link
+							i(class="fas fa-plus-circle admin-panel-menu__icon")
+							|Работа
+						
+						a(href="#!").admin-panel-menu__link
+							i(class="fas fa-edit admin-panel-menu__icon")
+							|Обо мне
+						
+						a(href="#!").admin-panel-menu__link
+							i(class="fas fa-edit admin-panel-menu__icon")
+							|Контакты
+						
+						a(href="#!").admin-panel-menu__link
+							i(class="fas fa-envelope admin-panel-menu__icon")
+							|Сообщения
+					.admin-panel-sign-out
+						
+						a(href="#!").admin-panel-sign-out__link
+							i(class="fas fa-sign-out-alt admin-panel-menu__icon")
+							|Выход

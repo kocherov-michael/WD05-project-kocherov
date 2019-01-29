@@ -1,0 +1,24 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Контакты - Сообщения';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+
+		.sticky-footer-content
+			.container.user-content.pt-80.pb-120
+				.row
+					.col-md-10.offset-md-1
+						.title-1 Сообщения от посетителей
+
+						.mb-20 
+							include ../sections/user-message.pug
+						include ../sections/user-message.pug
+
+			
+		include ../sections/footer.pug
+

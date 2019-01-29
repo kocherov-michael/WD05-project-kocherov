@@ -1,0 +1,89 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Главная';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-80.pb-55
+				.row
+					.col-md-3
+						.about-me__avatar
+							+avatarBig('avatar-1-big.jpg')
+					.col-md-9
+						.about-me-description
+							.about-me-description-wrap
+								.about-me-description-wrap__name Емельян Казаков
+								.about-me-description-wrap__button
+									+buttonEdit('Редактировать', '#!')
+							.about-me-description__content
+								p Я веб разработчик из Казани. Мне 28 лет.
+								p Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+								p Этот сайт я сделал в рамках обучения в школе онлайн обучения WebCademy. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+							.about-me__title Что я умею
+							.about-me-description__content
+								p Меня привлекет Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать не сложные задачи на Backend.
+								p Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.
+			.bg-technology
+					.container.user-content
+						.technology
+							.row
+								.col-md-9.offset-md-3
+										.technology-block
+											.technology-block__title Технологии
+												span Которые использую в работе
+											.technology-block__button
+												+buttonEdit('Редактировать', '#!')
+							.row.mb-40
+								.col-md-3.technology__title.d-flex.align-items-center.justify-content-center Frontend
+								.col-md-9
+									+indicator('HTML5', 'green', '35.18')
+									+indicator('CSS3', 'green', '130.92')
+									+indicator('JS', 'green', '35.18')
+									+indicator('jQuery', 'green','0')
+							.row.mb-40
+								.col-md-3.technology__title.d-flex.align-items-center.justify-content-center Backend
+								.col-md-9
+									+indicator('PHP', 'blue', '35.18')
+									+indicator('MySql', 'blue', '130.92')
+							.row
+								.col-md-3.technology__title.d-flex.align-items-center.justify-content-center Workflow
+								.col-md-9
+									+indicator('Git', 'yellow', '35.18')
+									+indicator('Gulp', 'yellow', '130.92')
+									+indicator('Bower', 'yellow', '35.18')
+									+indicator('WebPack', 'yellow')
+			.container.user-content.pb-120
+				.row.mb-35
+					.col-md-9.offset-md-3
+						.work-experience
+							.work-experience-block
+								.work-experience-block__title Опыт работы
+								.work-experience-block__button
+									+buttonEdit('Редактировать', '#!')
+							.work-experience__date февраль 2017  — по настоящее время
+							.work-experience__title Frontend разработчик, Вконтактe, mail.ru group
+							.work-experience__description.
+								Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+				.row.mb-35
+					.col-md-9.offset-md-3
+						.work-experience
+							.work-experience__date сентябрь 2015 — январь 2017
+							.work-experience__title Разработчик интерфейсов, Яндекс
+							.work-experience__description.
+								Работы в проекте Яндекс Музыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.
+				.row
+					.col-md-9.offset-md-3
+						.work-experience
+							.work-experience__date март 2013 — август 2015
+							.work-experience__title Веб-разработчик, Cloud studio
+							.work-experience__description.
+								Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазинов. Участие в разработке CRM системы “Sky CRM”. Стек используемых технологий: Git, JS, Angular. 
+
+		include ../sections/footer.pug
+

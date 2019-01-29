@@ -1,0 +1,33 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+    - var title = 'Шапка(Администратор) - UI-kit и HTML фреймворк - Документация';
+    - var pageClass = 'body--dashboard';
+
+block content
+    .main-wrapper
+        .container.container--left.user-content.pt-35
+            h1 Шапка (Администратор)
+
+            .section-ui
+                .header
+                    div.header__left-side
+                        div.header__logo.mb-35
+                            include ../../sections/logo.pug
+
+                        div.header__nav.ml-55
+                            include ../../sections/header__navigation.pug
+
+            pre.
+                include ../../sections/header-admin.pug
+
+            .title sections/header-admin.pug
+
+            pre.
+                .header
+                    div.header__left-side
+                        div.header__logo.mb-35
+                            include ../sections/logo.pug
+
+                        div.header__nav.ml-55
+                            include ../sections/header__navigation.pug

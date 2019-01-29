@@ -1,0 +1,49 @@
+.notification__error--text{
+	padding: 0;
+	line-height: 1.3;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.notification__error--added-text {
+	padding: 5px 15px 15px;
+}
+
+.notification__error--added-text p {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.notification__error--added-text p:last-child {
+	margin-bottom: 0;
+}
+.notification__error {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+.hidden {
+	display: none;
+}
+.password-remember-return {
+	text-align: center;
+	padding: 10px 0 25px;
+}
+
+.notification__success--top-border-radius {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 10px;
+}
+.button--set-new-password {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.registration-form {
+	padding-top: 35px;
+}
+.registration-form > .title-1 {
+	margin-top: 0;
+}
+.notify2 {
+	
+}

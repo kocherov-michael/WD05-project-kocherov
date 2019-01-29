@@ -1,0 +1,48 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Редактировать данные';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-70
+				h1.title-1 Редактировать данные
+				form.contacts-edit-form
+					.row.contacts-edit-form__row
+						.col-md-3
+							+labelInputText("Имя", "Введите имя", "name")
+						.col-md-3
+							+labelInputText("Фамилия", "Введите фамилию", "surname")
+					.row.contacts-edit-form__row
+						.col-md-3
+							+labelInputText("Email", "Введите email", "email")
+						.col-md-3
+							+labelInputText("Skype", "Введите skype", "skype")
+					.row.contacts-edit-form__row
+						.col-md-3
+							+labelInputText("Вконтакте", "Введите ссылку на профиль", "vkontakte")
+						.col-md-3
+							+labelInputText("Facebook", "Введите ссылку на профиль", "facebook")
+						.col-md-3
+							+labelInputText("Github", "Введите ссылку на профиль", "github")
+						.col-md-3
+							+labelInputText("Twitter", "Введите ссылку на профиль", "twitter")
+					.row.contacts-edit-form__row
+						.col-md-3
+							+labelInputText("Телефон", "Введите телефон", "phone")
+						.col-md-3
+							+labelInputText("Адрес", "Введите адрес", "address")
+					.row.contacts-edit-form__row
+						.form-button-save
+							+buttonSave('Сохранить', '', '', 'submit', 'data-edit')
+						.form-button-cancel
+							button.button(type="reset") Отмена
+
+
+		include ../sections/footer.pug
+

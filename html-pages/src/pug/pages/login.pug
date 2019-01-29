@@ -1,0 +1,41 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Вход на сайт';
+	- var pageClass = 'content-page';
+
+block content
+	.registration-wrapper
+		.registration-header-wrapper
+			+logo('Супер Сайт')
+			.login #[a(href="#!") Регистрация]
+
+		.container
+			.row.justify-content-center
+				.col-4
+					form.registration-form
+						h1.title-1.registration-form__caption Вход на сайт
+						.registration-form__error
+							+notification__error('Введите email')
+						.registration-form__email
+							+inputText("E-mail")
+						.registration-form__password
+							+inputText("Пароль")
+						.password-remember-wrapper
+							.registration-form__remember
+								+checkbox('Запомнить меня','checked')
+							span #[a(href="#!").registration-form__password-recovery Забыл пароль]
+						.registration-form__button
+							+buttonEnter('Войти', '', 'small', 'submit', 'name')
+
+		.container
+			.row.justify-content-center
+				.col-md-4
+					.footer__text.text-center
+						p © Юрий Ключевский
+						p
+							| Создано с 
+							span ❤
+							|  в 
+							a(href='http://webcademy.ru/', target='_blank') WebCademy.ru
+							|  в 2018 году

@@ -1,0 +1,13 @@
+.leave-comment-title Оставить комментарий
+.leave-comment
+	.leave-comment-avatar
+		+avatar('avatar-1.jpg')
+
+	form.leave-comment-form
+		.leave-comment-form__name Юрий Ключевский
+		+notification__error('Комментарий не может быть пустым.')
+		.mb-10
+
+		+textarea("Присоединиться к обсуждению...")
+		.mb-10
+		+button('Опубликовать', '', '', 'submit', 'button')

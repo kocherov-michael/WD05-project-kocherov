@@ -1,0 +1,47 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Редактировать - Опыт работы';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-80.pb-120
+				.row
+					.col-10.offset-1
+						.title-1.work-experience-title Редактировать - Опыт работы
+
+						.work-experience-post
+							.work-experience-post-wrap
+								.work-experience-post-wrap__date февраль 2017  — по настоящее время
+								.work-experience-post-button
+									+buttonDelete('Удалить', '#!')
+							.work-experience-post__title Frontend разработчик, Вконтактe, mail.ru group
+							.work-experience-post__message.
+								Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+
+						.work-experience-post
+							.work-experience-post-wrap
+								.work-experience-post-wrap__date февраль 2017  — по настоящее время
+								.work-experience-post-button
+									+buttonDelete('Удалить', '#!')
+							.work-experience-post__title Frontend разработчик, Вконтактe, mail.ru group
+							.work-experience-post__message.
+								Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+
+						.work-experience-title-2 Добавить новое место
+
+						form.work-experience-form
+							.work-experience-form__item
+								+labelInputText("Период", "Введите даты начала и окончания работы", "worck-date")
+							.work-experience-form__item
+								+labelInputText("Название должности", "Введите название должности", "position")
+							.work-experience-form__item
+								+labelTextarea("Описание работы, должностные обязанности, достигнутые результаты", "Напишите интересное краткое содержательное описание", "textarea")
+							+buttonSave('Добавить', '', '', 'submit', 'button')
+		include ../sections/footer.pug
+

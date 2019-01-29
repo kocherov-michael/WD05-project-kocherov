@@ -1,0 +1,46 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Индикаторы - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Индикаторы
+			.section-ui
+				.indicators-container
+					.row.ml-100.pt-50
+						+indicator('HTML5', 'green', '211.11')
+						+indicator('CSS3', 'green', '175.92')
+						+indicator('JS', 'green', '35.18')
+						+indicator('jQuery', 'green','0')
+					.row.ml-100.pt-50
+						+indicator('PHP', 'blue', '211.11')
+						+indicator('MySql', 'blue', '175.92')
+					.row.ml-100.pt-50
+						+indicator('Git', 'yellow', '211.11')
+						+indicator('Gulp', 'yellow', '175.92')
+						+indicator('Bower', 'yellow', '35.18')
+						+indicator('WebPack', 'yellow')
+					.row.ml-100.pt-50
+						+indicator('40%', 'yellow', '211.11')
+						+indicator('50%', 'yellow', '175.92')
+						+indicator('90%', 'yellow', '35.18')
+						+indicator('100%', 'yellow','0')
+				.title 
+				pre.
+						+indicator('HTML5', 'green', '211.11')
+						+indicator('CSS3', 'green', '175.92')
+						+indicator('JS', 'green', '35.18')
+						+indicator('jQuery', 'green','0')
+						+indicator('PHP', 'blue', '211.11')
+						+indicator('MySql', 'blue', '175.92')
+						+indicator('Git', 'yellow', '211.11')
+						+indicator('Gulp', 'yellow', '175.92')
+						+indicator('Bower', 'yellow', '35.18')
+						+indicator('WebPack', 'yellow')
+						+indicator('40%', 'yellow', '211.11')
+						+indicator('50%', 'yellow', '175.92')
+						+indicator('90%', 'yellow', '35.18')
+						+indicator('100%', 'yellow','0')

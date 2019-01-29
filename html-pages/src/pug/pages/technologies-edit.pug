@@ -1,0 +1,69 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Обо мне Редактировать - Технологии';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-45.pl-0
+				.row
+					.offset-md-1.col-md-8
+						h1.title-1 Редактировать - Технологии
+						form.technology-edit-form
+							.row.technology-edit-form__row
+								.col-md-3.technology-edit-form__item
+									+labelInputText("HTML5", "0", "html5")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("CSS3", "0", "css3")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("JS", "0", "js")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("jQuery", "0", "jquery")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+							.row.technology-edit-form__row
+								.col-md-3.technology-edit-form__item
+									+labelInputText("PHP", "0", "php")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("MySql", "0", "mysql")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+							.row.technology-edit-form__row.mb-30
+								.col-md-3.technology-edit-form__item
+									+labelInputText("Git", "0", "git")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("Gulp", "0", "gulp")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("Bower", "0", "bower")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+								.col-md-3.technology-edit-form__item
+									+labelInputText("WebPack", "0", "webpack")(class="input-text--width")
+									.percent-sign
+										span.percent-sign__item %
+							.row.technology-edit-form__row
+								.technology-edit-form__button
+									+buttonSave('Сохранить', '', '', 'submit', 'technology-edit')
+								.technology-edit-form__button-cancel
+									button.button(type="reset") Отмена
+
+
+		include ../sections/footer.pug
+

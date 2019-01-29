@@ -1,0 +1,94 @@
+mixin buttonPrimary(text, link)
+	if link 
+		a(class="button button--primary" href= link)&attributes(attributes) #{text}
+	else
+		a(class="button button--primary" href= '#!')&attributes(attributes) #{text}
+
+mixin button(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		input.button.button-small--border(type='submit' value=text name=name)
+	else if type === 'submit'
+		input.button(type='submit' value=text name=name)
+	else if small === 'small'
+		a(class="button button-small--border" href= link)&attributes(attributes) #{text}
+	else
+		a(class="button" href= link)&attributes(attributes) #{text}
+
+mixin buttonForward(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		.button__arrow-wrap
+			input.button.button-forward.button-small--forward(type='submit' value=text name=name)
+			i(class="fas fa-arrow-right arrow--small-right")
+	else if type === 'submit'
+		.button__arrow-wrap
+			input.button.button-forward(type='submit' value=text name=name)
+			i(class="fas fa-arrow-right")
+	else if small === 'small'
+		.button__arrow-wrap
+			a(class="button button-forward button-small--forward" href= link)&attributes(attributes) #{text}
+			i(class="fas fa-arrow-right arrow--small-right")
+	else 
+		.button__arrow-wrap
+			a(class="button button-forward" href= link)&attributes(attributes) #{text}
+			i(class="fas fa-arrow-right")
+
+mixin buttonBackward(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		.button__arrow-wrap
+			input.button.button-backward.button-small--backward(type='submit' value=text name=name)
+			i(class="fas fa-arrow-left arrow--small-left")
+	else if type === 'submit'
+		.button__arrow-wrap
+			input.button.button-backward(type='submit' value=text name=name)
+			i(class="fas fa-arrow-left")
+	else if small === 'small'
+		.button__arrow-wrap
+			a(class="button button-backward button-small--backward" href= link)&attributes(attributes) #{text}
+			i(class="fas fa-arrow-left arrow--small-left")
+	else 
+		.button__arrow-wrap
+			a(class="button button-backward" href= link)&attributes(attributes) #{text}
+			i(class="fas fa-arrow-left")
+
+mixin buttonEdit(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		input.button.button-edit.button-small(type='submit' value=text name=name)
+	else if type === 'submit'
+		input.button.button-edit(type='submit' value=text name=name)
+	else if small === 'small'
+		a(class="button button-edit button-small" href= link)&attributes(attributes) #{text}
+	else
+		a(class="button button-edit" href= link)&attributes(attributes) #{text}
+
+mixin buttonDelete(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		input.button.button-delete.button-small(type='submit' value=text name=name)
+	else if type === 'submit'
+		input.button.button-delete(type='submit' value=text name=name)
+	else if small === 'small'
+		a(class="button button-delete button-small" href= link)&attributes(attributes) #{text}
+	else
+		a(class="button button-delete" href= link)&attributes(attributes) #{text}
+
+mixin buttonSave(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		input.button.button-save.button-small(type='submit' value=text name=name)
+	else if type === 'submit'
+		input.button.button-save(type='submit' value=text name=name)
+	else if small === 'small'
+		a(class="button button-save button-small" href='#!')&attributes(attributes) #{text}
+	else
+		a(class="button button-save" href='#!')&attributes(attributes) #{text}
+
+mixin buttonEnter(text, link, small, type, name)
+	if type === 'submit' & small ==='small'
+		input.button.button-enter.button-small(type='submit' value=text name=name)
+	else if type === 'submit'
+		input.button.button-enter(type='submit' value=text name=name)
+	else if small === 'small'
+		a(class="button button-enter button-small" href= link)&attributes(attributes) #{text}
+	else
+		a(class="button button-enter" href= link)&attributes(attributes) #{text}
+
+mixin buttonProfile(text, link)
+	a(class="button button-profile" href= link)&attributes(attributes) #{text}

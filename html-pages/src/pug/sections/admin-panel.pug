@@ -1,0 +1,32 @@
+.admin-panel
+		.admin-panel-user
+			+avatar('avatar-admin.png')
+			.admin-panel-user-wrap
+				.admin-panel-user-wrap__name Юрий Ключевский
+				+badge("Администратор", "!#")
+		nav.admin-panel-menu
+			
+			a(href="post-add.html").admin-panel-menu__link
+				i(class="fas fa-plus-circle admin-panel-menu__icon")
+				|Пост
+			
+			a(href="works-add.html").admin-panel-menu__link
+				i(class="fas fa-plus-circle admin-panel-menu__icon")
+				|Работа
+			
+			a(href="edit-about-me.html").admin-panel-menu__link
+				i(class="fas fa-edit admin-panel-menu__icon")
+				|Обо мне
+			
+			a(href="contacts-edit.html").admin-panel-menu__link
+				i(class="fas fa-edit admin-panel-menu__icon")
+				|Контакты
+			
+			a(href="contacts-messages.html").admin-panel-menu__link
+				i(class="fas fa-envelope admin-panel-menu__icon")
+				|Сообщения
+		.admin-panel-sign-out
+			
+			a(href="login.html").admin-panel-sign-out__link
+				i(class="fas fa-sign-out-alt admin-panel-menu__icon")
+				|Выход

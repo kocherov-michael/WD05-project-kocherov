@@ -1,0 +1,42 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Редактировать профиль';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/header-user.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-45.pl-20
+				.row
+					.offset-md-1.col-md-10
+						h1.title-1 Редактировать профиль
+						form.edit-user-profile-form
+							.row.edit-user-profile-form__row
+								.col-md-4
+									+labelInputText("Имя", "Введите имя", "name")
+							.row.edit-user-profile-form__row
+								.col-md-4
+									+labelInputText("Фамилия", "Введите фамилию", "surname")
+							.row.edit-user-profile-form__row
+								.col-md-4
+									+labelInputText("Email", "Введите email", "email")
+							.row.edit-user-profile-form__row
+								.col-md-9
+									+loadFile("Фотография", "Изображение jpg или png, размером больше чем 100х100 пикселей и весом до 2Мб.")
+							.row.edit-user-profile-form__row
+								.col-md-4
+									+labelInputText("Страна", "Введите страну", "country")
+							.row.edit-user-profile-form__row
+								.col-md-4
+									+labelInputText("Город", "Введите город", "city")
+							.row.edit-user-profile-form__row
+								.form-button-save
+									+buttonSave('Сохранить', '', '', 'submit', 'data-edit')
+								.form-button-cancel
+									button.button(type="reset") Отмена
+
+
+		include ../sections/footer.pug

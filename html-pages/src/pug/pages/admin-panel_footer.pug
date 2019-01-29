@@ -1,0 +1,18 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Главная';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-80
+				
+				h1 ...здесь ожидается что-то грандиозное ;-)
+				h2(style="color:red; text-align: center;") Если на вашей странице сборки header и footer выглядят как на этой картинке,<br> то берите шаблон <b>pages/admin-panel_footer.pug</b>
+			
+		include ../sections/footer.pug
+

@@ -1,0 +1,46 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'Карточки - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	.main-wrapper
+		.container.container--left.user-content.pt-35
+			h1 Карточка - Пост в блоге
+
+			.section-ui
+			+cardPost('Поездка в New York пример длинного названия поста ...', '#!', "../img/thumbs/post-thumb.png")
+
+			.section-ui
+			pre.
+				+cardPost('Поездка в New York пример длинного названия поста ...', '#!', "../img/thumbs/post-thumb.png")
+
+			.title mixins/_cards.pug
+			pre.
+				mixin cardPost(title, link, image)
+					.card-post
+						.card-post__image.mb-15
+							img(src= image, alt= title)
+						.card-post__title #{title}
+						+button('Читать', link)
+
+			hr
+
+			h1 Карточка - Работа в Портфолио
+
+			.section-ui
+			+cardPortfolio('Верстка Landing Page', '#!', "../img/thumbs/portfolio-thumb.png")
+
+			.section-ui
+			pre.
+				+cardPortfolio('Верстка Landing Page', '#!', "../img/thumbs/portfolio-thumb.png")
+
+			.title mixins/_cards.pug
+			pre.
+				mixin cardPortfolio(title, link, image)
+					.card-portfolio
+						.card-portfolio__image.mb-15
+							img(src= image, alt= title)
+						.card-portfolio__title.ml-20 #{title}
+						+button('Смотреть кейс', link)

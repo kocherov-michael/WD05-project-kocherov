@@ -1,0 +1,29 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Пост добавить';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-80.pb-120
+				.row
+					.col-10.offset-1
+						.title-1.post-add__title Добавить пост
+						form.post-add-form
+							.post-add-form__name
+								+labelInputText("Название", "Введите имя", "name")
+							.post-add-form__file
+								+loadFile("Изображение", "Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.")
+							.post-add-form__textarea
+								+labelTextarea("Содержание", "Введите город", "name")
+							.post-add-form-button
+								+buttonSave('Сохранить', '', '', 'submit', 'name')
+								.post-add-form-button__cancel
+									input(class="button" type="reset" name="cansel" value="Отмена")
+		include ../sections/footer.pug
+

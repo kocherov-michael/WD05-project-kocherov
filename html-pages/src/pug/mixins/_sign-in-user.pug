@@ -1,0 +1,11 @@
+mixin sign-in-user(avatarLink, userName)
+    div.sign-in-user
+        div.user__avatar
+            +avatar(avatarLink)
+        div.user__desc
+            div.user__text
+                span.name #{userName}
+                span.desc Пользователь
+            div.user__buttons
+                +buttonProfile('Профиль', '#!')
+                +buttonProfile('Выход', '#!')

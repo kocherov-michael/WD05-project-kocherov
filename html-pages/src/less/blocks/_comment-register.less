@@ -1,0 +1,33 @@
+@bgCommentRegister: rgba(238, 240, 242, 0.5);
+@capCommentRegister: #383737;
+
+.comment__register {
+	padding-top: 45px;
+	padding-bottom: 50px;
+	width: 100%;
+	border-radius: 6px;
+	background-color: @bgCommentRegister;
+	color: @capCommentRegister;
+	font-size: 20px;
+	letter-spacing: 0.4px;
+	font-weight: 400;
+	line-height: 1.7;
+
+	a {
+		.transition;
+		margin: 0;
+		padding: 0;
+		text-decoration: underline;
+		outline: none;
+		
+		&:hover,
+		&:focus {
+			color: lighten(@linkColor, 7);
+		}// &:hover
+
+		&:active {
+			color: darken(@linkColor, 7);
+		}// &:active
+	}// a
+	
+}// .comment__register

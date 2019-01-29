@@ -1,0 +1,99 @@
+.load-file-title {
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 700;
+	color: #222222;
+	margin-bottom: 10px;
+}
+
+.load-file-opis {
+	font-family: @baseFont;
+	color: #222222;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.load-file-fieldset {
+	border: none;
+	background-color: #FFF;
+	display: block;
+}
+
+.inputfile
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile-rad
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    display: inline-block;
+    background-color: #b1bfc7;
+    color: white;
+    font-size: 1rem;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    padding: 14px 20.2px;
+}
+
+.inputfile-rad + label {
+    display: inline-block;
+    background-color: #b1bfc7;
+    color: white;
+    font-size: 1rem;
+    -webkit-border-radius: 22px;
+            border-radius: 22px;
+    padding: 14px 20.2px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #1e6791;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile + label + span {
+	color: #8e9ba2; 
+	vertical-align: top;
+	padding: 14px 0 0 15px;
+	display: inline-block;
+	font-weight: 400;
+}
+
+.inputfile-rad:focus + label,
+.inputfile-rad + label:hover {
+    background-color: #1e6791;
+}
+
+.inputfile-rad + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile-rad + label + span {
+	color: #8e9ba2; 
+	vertical-align: top;
+	padding: 14px 0 0 15px;
+	display: inline-block;
+	font-weight: 400;
+}
+
+.load-file-form {
+	border: none;
+	background-color: transparent;
+}

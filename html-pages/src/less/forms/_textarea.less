@@ -1,0 +1,44 @@
+@borderColor: #b1bfc7;
+@backgroundColor: #fff;
+@shadowColor: rgba(139, 167, 197, 0.25);
+@textareaColor: #383737;
+@labelColor: #222222;
+
+.input-text, .textarea {
+	transition: box-shadow 0.2s ease-in;
+	border-radius: 4px;
+	border: 1px solid @borderColor;
+	background-color: @backgroundColor;
+	padding: 5px 15px;
+	margin-top: 10px;
+	width: 100%;
+	
+	color: #000000;
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 2;
+	
+	&:focus, &:active {
+		outline-style: none;
+		box-shadow: 0 0 0 3px @shadowColor;
+	}
+}
+
+.textarea {
+	min-height: 160px;
+	padding: 10px 15px;
+	
+	color: @textareaColor;
+	line-height: 1.5;
+}
+
+.label {
+	display: flex;
+	flex-direction: column;
+	color: @labelColor;
+	font-family: @baseFont;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+}

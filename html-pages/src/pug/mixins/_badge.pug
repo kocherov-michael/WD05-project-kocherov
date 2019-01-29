@@ -1,0 +1,5 @@
+mixin badge(text, link)
+	if link 
+		a(class="badge" href= link)&attributes(attributes) #{text}
+	else
+		div(class="badge")&attributes(attributes) #{text}

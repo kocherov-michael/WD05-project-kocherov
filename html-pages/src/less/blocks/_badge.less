@@ -1,0 +1,22 @@
+a.badge {
+	text-decoration: none;
+	cursor: pointer;
+	&:hover,		
+	&:focus {		
+		background-color: lighten(#a0cce5, 7);
+	}
+	&:active {
+		background-color: darken(#a0cce5, 7);
+	}
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.5em 1.125em;
+	font-family: @baseFont;
+	font-size: 13px;
+	color: #ffffff;
+	font-weight: 700;
+	background-color: #a0cce5;
+	border-radius: 22px;
+}

@@ -1,0 +1,16 @@
+mixin indicator(text, color, degree)
+	if color == 'green'
+		.indicator
+			svg(viewbox="0 0 125 125").svg-box
+				circle.circle(style={'stroke-dashoffset': degree}).circle-green 
+			.indicator__value #{text}
+	else if color == 'blue'
+		.indicator
+			svg(viewbox="0 0 125 125").svg-box
+				circle.circle(style={'stroke-dashoffset': degree}).circle-blue
+			.indicator__value #{text}
+	else
+		.indicator
+			svg(viewbox="0 0 125 125").svg-box
+				circle.circle(style={'stroke-dashoffset': degree}).circle.circle-yellow
+			.indicator__value #{text}

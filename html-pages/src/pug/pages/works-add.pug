@@ -1,0 +1,38 @@
+extends ../layouts/page-layout/page.pug
+
+block variables
+	- var title = 'Работы - Добавить';
+	- var pageClass = 'content-page';
+
+block content
+	.sticky-footer-wrapper
+		include ../sections/admin-panel.pug
+		include ../sections/header-admin.pug
+		
+		.sticky-footer-content
+			.container.user-content.pt-80.pb-120
+				.row
+					.offset-1
+					.col-10
+						.title-1 Добавить работу
+						form.works-add-form
+							.works-add-form__item
+								+labelInputText("Название", "Введите название работы", "work-name")
+							.works-add-form__item
+								+loadFile("Изображение", "Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.")
+							.works-add-form__item
+								+labelTextarea("Содержание", "Введите описание", "textarea")
+							.works-add-form__item
+								+labelTextarea("Результат", "Введите описание", "textarea")
+							.works-add-form__item
+								+labelTextarea("Технологии", "Введите описание", "textarea")
+							.row
+								.col-3
+									+labelInputText("Ссылка на проект", "Введите ссылку", "link")
+								.col-3
+									+labelInputText("Ссылка на проект", "Введите ссылку", "link")
+							.works-add-form__buttons
+								+buttonSave('Сохранить', '', '', 'submit', 'button')
+								+button('Отмена', '', '', 'submit', 'button')
+		include ../sections/footer.pug
+

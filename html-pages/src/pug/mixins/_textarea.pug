@@ -1,0 +1,13 @@
+mixin inputText(placeholder)
+	input.input-text(type='text' placeholder= placeholder)&attributes(attributes)
+
+mixin textarea(placeholder)
+	textarea.textarea(type='text' placeholder= placeholder)&attributes(attributes)
+
+mixin labelTextarea(label, placeholder, name)
+	label.label #{label}
+		textarea.textarea(type='text' placeholder= placeholder name=name)&attributes(attributes)
+
+mixin labelInputText(label, placeholder, name)
+	label.label #{label}
+		input.input-text(type='text' placeholder= placeholder name=name)&attributes(attributes)
