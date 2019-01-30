@@ -5,10 +5,10 @@ $recoveryInstructionReady = false;
 if (isset($_POST['lost-password'])) {
 	if (trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email'];
-	}
-	if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email)) {
+	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", $_POST['email'])) {
 		$errors[] = ['title' => 'Email указан некорректно'];
 	}
+	
 	if (empty($errors)) {
 		$user = R::findOne('users', 'email = ?', array($_POST['email']));
 		if ($user) {

@@ -6,13 +6,13 @@ if(isset($_POST['register'])){
 
 	if (trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email'];
+	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", $_POST['email'])) {
+		$errors[] = ['title' => 'Email указан некорректно'];
 	}
 	if (trim($_POST['password']) == '' ) {
 		$errors[] = ['title' => 'Введите пароль'];
 	}
-	if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $_POST['email'])) {
-		$errors[] = ['title' => 'Email указан некорректно'];
-	}
+	
 	//Проверка что пользователь существует
 	if (R::count( 'users', 'email = ?', array($_POST['email'])) > 0 ) {
 		$errors[] = [
@@ -34,7 +34,6 @@ if(isset($_POST['register'])){
 		$_SESSION['logged_user'] = $user;
 		$_SESSION['login'] = '1';
 		$_SESSION['role'] = $user->role;
-		// header('Location: ' . HOST . "profile-edit");
 		header('Location: ' . HOST . "profile-edit");
 		exit();
 

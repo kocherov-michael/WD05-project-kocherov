@@ -22,8 +22,10 @@
 	<div class="password-remember-return">
 				<a class="registration-form__password-recovery" href="<?=HOST?>login">Перейти на страницу входа</a>
 	</div>
-	<div class="registration-form__button">
-		<input type="hidden" value="lost-password" name="lost-password" />
-		<a class="button button-enter button--lost">Восстановить пароль</a>
-	</div>
+	<?php if ($recoveryInstructionReady == false): ?>
+		<div class="registration-form__button">
+			<input type="hidden" value="lost-password" name="lost-password" />
+			<a class="button button-enter button--lost">Восстановить пароль</a>
+		</div>
+	<?php endif ?>
 </form>

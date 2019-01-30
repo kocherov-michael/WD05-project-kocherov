@@ -45,10 +45,10 @@ $(document).ready(function() {
 				});
 			}
 		} else if ( password.val() == '' ) {
-			$('.notify').fadeIn();
-			$('.notify').text('Введите пароль');
+			$('.notify2').fadeIn();
+			$('.notify2').text('Введите пароль');
 			password.focus(function(event) {
-				$('.notify').fadeOut(0);
+				$('.notify2').fadeOut(0);
 			});
 		} else {
 			// переходим на страницу профиля
@@ -102,10 +102,10 @@ $(document).ready(function() {
 				});
 			}
 		} else if ( password.val() == '' ) {
-			$('.notify').fadeIn();
-			$('.notify').text('Введите пароль');
+			$('.notify2').fadeIn();
+			$('.notify2').text('Введите пароль');
 			password.focus(function(event) {
-				$('.notify').fadeOut(0);
+				$('.notify2').fadeOut(0);
 			});
 		} else {
 			// переходим на страницу профиля

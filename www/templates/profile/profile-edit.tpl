@@ -6,7 +6,7 @@
 
 				<?php require ROOT . "templates/_parts/_errors.tpl"?>
 
-				<form enctype="multipart/form-data" action="<?=HOST?>profile-edit" method="POST" class="edit-user-profile-form">
+				<form enctype="multipart/form-data" action="<?=HOST?>profile-edit" method="POST" class="edit-user-profile-form" novalidate>
 					<div class="row edit-user-profile-form__row">
 						<div class="col-md-4"><label class="label">Имя<input class="input-text" type="text" placeholder="Введите имя" name="name" value="<?=$currentUser->name?>" /></label></div>
 					</div>
@@ -32,8 +32,12 @@
 						<div class="col-md-4"><label class="label">Город<input class="input-text" type="text" placeholder="Введите город" name="city" value="<?=$currentUser->city?>"/></label></div>
 					</div>
 					<div class="row edit-user-profile-form__row">
-						<div class="form-button-save"><input class="button button-save" type="submit" value="Сохранить" name="profile-update" /></div>
-						<div class="form-button-cancel"><a class="button" href="<?=HOST?>profile">Отмена</a></div>
+						<div class="form-button-save">
+							<input class="button button-save" type="submit" value="Сохранить" name="profile-update" />
+						</div>
+						<div class="form-button-cancel">
+							<a class="button" href="<?=HOST?>profile">Отмена</a>
+						</div>
 					</div>
 				</form>
 			</div>

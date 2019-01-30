@@ -7,8 +7,7 @@ if (isset($_POST['login'])) {
 		$errors[] = ['title' => 'Введите Email'];}
 	if (trim($_POST['password']) == '' ) {
 		$errors[] = ['title' => 'Введите пароль'];
-	}
-	if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $_POST['email'])) {
+	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", $_POST['email'])) {
 		$errors[] = ['title' => 'Email указан некорректно'];
 	}
 
