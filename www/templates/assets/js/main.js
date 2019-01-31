@@ -155,6 +155,7 @@ $(document).ready(function() {
 	});
 
 
+
 //Map block
 
 function initMap() {

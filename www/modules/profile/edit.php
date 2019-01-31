@@ -10,14 +10,21 @@ if (isset($_POST['profile-update'])) {
 		$errors[] = ['title' =>'Введите Email' ];
 	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", $_POST['email'])) {
 		$errors[] = ['title' => 'Email указан некорректно'];
+	} else {
+		$postEmail = $_POST['email'];
 	}
 	if (trim($_POST['name']) == '' ) {
 		$errors[] = ['title' =>'Введите Имя' ];
+	} else {
+		$postName = $_POST['name'];
 	}
 	if (trim($_POST['secondname']) == '' ) {
 		$errors[] = ['title' =>'Введите Фамилию' ];
+	} else {
+		$postSecondname = $_POST['secondname'];
 	}
-
+	$postCountry = $_POST['country'];
+	$postCity = $_POST['city'];
 	if ( empty($errors) ) {
 		$user->name = htmlentities($_POST['name']);
 		$user->secondname = htmlentities($_POST['secondname']);

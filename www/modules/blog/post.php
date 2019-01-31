@@ -1,12 +1,17 @@
 <?php 
-$title = "Профиль пользователя";
+// $title = "Блог - все записи";
 
-$currentUser = $_SESSION['logged_user'];
+//Получаем из БД посты в порядке, при котором последние посты отображаются вверху
+// $posts = R::find('posts', 'ORDER BY id DESC');
+
+$post = R::findOne('posts', 'id = ?', array($_GET['id']));
+
+
 
 //Контент для центральной части
 ob_start();//запускаем буферизацию
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/profile/profile.tpl";
+include ROOT . "templates/blog/blog-post.tpl";
 $content = ob_get_contents();//возвращаем содержимое буфера
 ob_end_clean();//заканчиваем буферизацию
 

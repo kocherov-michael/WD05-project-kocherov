@@ -109,4 +109,19 @@ function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
 }
 
+//Обрезка заголовка
+function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8'){
+	//если строка меньше максимально допустимой длины, то не форматируем её
+	if (mb_strlen($string, $encoding) <= $length ) {
+		return $string;
+	}
+	//возвращаем часть строки
+	$temp = mb_substr($string, 0, $length, $encoding );
+	//Получаем позицию последнего пробела
+	$spacePosition = mb_strripos($temp, " ", 0, $encoding );
+	//Обрезаем по последнему целому слову и добавляем троеточие
+	$result = mb_substr($temp, 0, $spacePosition, $encoding ) . "...";
+	return $result;
+}
+
 ?>
