@@ -15,9 +15,24 @@
 				<form action="<?=HOST?>blog/post-new" method="POST" enctype="multipart/form-data" class="post-add-form">
 					<div class="post-add-form__name">
 						<label class="label">Название
-							<input class="input-text" type="text" placeholder="Введите название" name="postTitle" />
+							<input class="input-text" type="text" placeholder="Введите название" name="postTitle" value=
+								"<?=(isset($postPostTitle)) ? $postPostTitle : "" ?>" />
 						</label>
 					</div>
+
+					<div class="post-add-form__file">
+						<label class="label">Категория
+							<select name="postCat" class="select">
+								<?php foreach ($cats as $cat): ?>
+								<option value="<?=$cat['id']?>"><?=$cat['cat_title']?></option>
+									
+								<?php endforeach ?>
+								
+							</select>
+						</label>
+					</div>
+
+
 					<div class="post-add-form__file">
 						<div class="load-file-title">Изображение </div>
 						<div class="load-file-opis">Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.</div>
@@ -28,14 +43,15 @@
 						</div>
 					</div>
 					<div class="post-add-form__textarea">
-						<label class="label">Содержание
-							<textarea class="textarea" type="text" placeholder="Введите описание" name="postText"></textarea>
+						<label class="label"><span class="mb-10">Содержание</span>
+							<textarea id="ckEditor" class="textarea" type="text" placeholder="Введите описание" name="postText">
+								<?=(isset($postPostText)) ? $postPostText : "" ?></textarea>
+							<?php include_once ROOT . "templates/_parts/_ckEditorConnect.tpl" ?>
 						</label>
 					</div>
 					<div class="post-add-form-button">
 						<input class="button button-save" type="submit" value="Сохранить" name="postNew" />
 						<div class="post-add-form-button__cancel">
-							<!-- <input class="button" type="reset" name="cansel" value="Отмена" /> -->
 							<a class="button" href="<?=HOST?>blog" >Отмена</a>
 						</div>
 					</div>

@@ -11,14 +11,22 @@
 					<div class="blog-post-heading-wrapper">
 						<div class="blog-post__heading-button">
 							<h1 class="blog-post__title title-1"><?=$post['title']?></h1>
-							<?php if (isset($_SESSION['login']) && $_SESSION['login'] == '1'): ?>
-							<div class="blog__button--edit"><input class="button button-edit" type="submit" value="Редактировать" name="name" /></div>
-							<?php endif ?>
+							<?php if ( isAdmin() ) { ?>
+							<div class="blog__button--edit">
+								<a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
+								<a class="button button-delete ml-15" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>
+							</div>
+							<?php } ?>
 						</div>
 						<div class="blog-post__info">
-							<div class="blog-post__info-name">Емельян Казаков</div>
-							<div class="blog-post__info-category"><a href="#!">Путешествия</a></div>
+							<div class="blog-post__info-name"><?=$post['name']?> <?=$post['secondname']?></div>
+							<div class="blog-post__info-category"><a href="#!"><?=$post['cat_title']?></a></div>
+							<?php if (isset($post['update_time'])){ ?>
+								<div class="blog-post__info-date">Обновлено <? echo rus_date("j F Y H:i", strtotime($post['update_time'])); ?>
+								</div>
+							<?php } else { ?>
 							<div class="blog-post__info-date"><? echo rus_date("j F Y H:i", strtotime($post['date_time'])); ?></div>
+							<?php } ?>
 							<div class="blog-post__info-comment-count"><a href="#!">2 комментария</a></div>
 						</div>
 					</div>

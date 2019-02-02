@@ -1,12 +1,24 @@
 <?php 
-// $title = "Блог - все записи";
 
 //Получаем из БД посты в порядке, при котором последние посты отображаются вверху
-// $posts = R::find('posts', 'ORDER BY id DESC');
+$sql = '
+		SELECT 
+			posts.id, posts.title, posts.post_img, posts.date_time, posts.update_time, posts.author_id, posts.cat, posts.text,
+			users.name, users.secondname,
+		    categories.cat_title
+		FROM `posts` 
+		INNER JOIN categories ON posts.cat = categories.id
+		INNER JOIN users ON posts.author_id = users.id
+		WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
-$post = R::findOne('posts', 'id = ?', array($_GET['id']));
+$post = R::getAll( $sql );
+$post = $post[0];
+// echo "<pre>";
+// echo print_r($post[0]);
+// echo "</pre>";
+// die();
 
-
+$title = $post['title'];
 
 //Контент для центральной части
 ob_start();//запускаем буферизацию
