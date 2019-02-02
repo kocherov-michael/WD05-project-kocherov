@@ -5,6 +5,12 @@ if (isset($_POST['catNew'])) {
 	if (trim($_POST['catTitle']) == '' ) {
 		$errors[] = ['catTitle' => 'Введите название категорий'];
 	}
+
+	//Проверка что категория уже существует
+	if (R::count( 'categories', 'cat_title = ?', array($_POST['catTitle'])) > 0 ) {
+		$errors[] = ['title' => 'Такая категория уже существует'];
+	}
+
 	if (empty($errors)) {
 		$cat = R::dispense('categories');
 		$cat->cat_title = htmlentities($_POST['catTitle']);
