@@ -57,9 +57,22 @@
 .registration-form > .title-1 {
 	margin-top: 0;
 }
-.avatar {
+.avatar--big {
 	background-image: url(..//img/avatars/avatar-big.png);
 }
+.avatar--small {
+    background-image: url(..//img/avatars/avatar-small.png);
+    width: 48px;
+    height: 48px;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+.avatar--small img {
+    height: 48px;
+    width: 48px;
+}
+
 .load-file-wrap {
     margin-top: 20px;
     display: inline-block;
@@ -132,4 +145,11 @@ body::before {
     outline-style: none;
     -webkit-box-shadow: 0 0 0 3px rgba(139, 167, 197, 0.25);
     box-shadow: 0 0 0 3px rgba(139, 167, 197, 0.25);
+}
+.textarea {
+    margin-top: 0;
+}
+.two-comments-container {
+    -webkit-align-items: inherit;
+            align-items: inherit;
 }

@@ -162,6 +162,18 @@ $(document).ready(function() {
 			$(this).slideUp(400);
 		});
 
+	//Проверка формы комментариев
+	$('input[data-add-comment]').on('click', function(e){
+		comment = $('textarea[data-textarea-comment]');
+		if (comment.val() == '' ) {
+			e.preventDefault();
+			$('.notify[data-error-comment-empty]').fadeIn();
+			$('.notify[data-error-comment-empty]').text('Комментарий не может быть пустым.');
+			comment.focus(function(event) {
+				$('.notify[data-error-comment-empty]').fadeOut();
+			});
+		} 
+	});
 
 
 	//Map block
