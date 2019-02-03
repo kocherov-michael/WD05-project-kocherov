@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	// $(".left-panel").customScrollbar({preventDefaultScroll: true});
 	// Проверка формы регистрации
 	$('.button--registration').on('click', function(e){
