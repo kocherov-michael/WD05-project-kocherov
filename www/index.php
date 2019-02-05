@@ -67,14 +67,25 @@ switch( $uri[0]) {
 
 	//:::::::::::::::: BLOG ::::::::::::::::::::::::
 	case 'blog':
-	include "modules/blog/index.php";
+		include "modules/blog/index.php";
 		break;
 	case 'blog/post-new':
-	include "modules/blog/post-new.php";
+		include "modules/blog/post-new.php";
 		break;
 	case 'blog/post':
-	include "modules/blog/post.php";
+		include "modules/blog/post.php";
 		break;
+	//::::::::::::: CONTACTS ::::::::::::::::
+	case 'contacts':
+		include "modules/contacts/index.php";
+		break;
+	case 'contacts-edit':
+		include "modules/contacts/edit.php";
+		break;
+	case 'messages':
+		include "modules/contacts/messages.php";
+		break;
+
 	//::::::::::::: MAIN / OTHER ::::::::::::::::
 	default:
 		echo "404 Error";

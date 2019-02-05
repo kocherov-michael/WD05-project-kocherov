@@ -1,4 +1,8 @@
 <?php 
+if (!isAdmin()) {
+	header("Location: " . HOST);
+	die();
+}
 $title = "Категории блога";
 
 $cats = R::find('categories', 'ORDER BY cat_title ASC');

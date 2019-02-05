@@ -1,6 +1,8 @@
  <?php 
  $title = "Контакты";
 
+$contacts = R::load('contacts', 1);
+
  //Контент для центральной части
  ob_start();//запускаем буферизацию
  include ROOT . "templates/_parts/_header.tpl";

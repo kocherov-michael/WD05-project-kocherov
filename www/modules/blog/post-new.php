@@ -1,12 +1,10 @@
 <?php 
 $title = "Блог - Добавить новый пост";
 
-// echo "<pre>";
-// echo print_r($_POST);
-// echo "</pre><br>";
-// echo "<pre>";
-// echo print_r($_SESSION);
-// echo "</pre>";
+if (!isAdmin()) {
+	header("Location: " . HOST);
+	die();
+}
 
 if (isset($_POST['postNew'])) {
 	if (trim($_POST['postTitle']) == '' ) {

@@ -3,20 +3,12 @@ if (!isAdmin()) {
 	header("Location: " . HOST);
 	die();
 }
-$title = "Удалить категорию";
+$title = "Контакты";
 
-$cat = R::load('categories', $_GET['id']);
-
-if (isset($_POST['catDelete'])) {
-
-	R::trash($cat);
-	header('Location: ' . HOST . "blog/categories?result=catDeleted");
-	exit();
-}
 //Контент для центральной части
 ob_start();//запускаем буферизацию
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/categories/delete.tpl";
+include ROOT . "templates/contacts/messages.tpl";
 $content = ob_get_contents();//возвращаем содержимое буфера
 ob_end_clean();//заканчиваем буферизацию
 
