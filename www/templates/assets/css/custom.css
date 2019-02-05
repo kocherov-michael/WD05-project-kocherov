@@ -153,3 +153,11 @@ body::before {
     -webkit-align-items: inherit;
             align-items: inherit;
 }
+@media (max-width: 767px) {
+    .footer{
+        height: inherit;
+    }
+    .footer-column{
+        margin-bottom: 50px;
+    }
+}
