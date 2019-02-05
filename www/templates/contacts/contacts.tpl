@@ -71,17 +71,35 @@
 				<?php showContactsItem('address', 'Адрес') ?>
 			</div>
 			<div class="col-md-4">
-				<form class="form-contact">
+				<form class="form-contact" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data">
 					<div class="form-contact__title">Связаться со мной</div>
-					<div class="form-contact__name"><input class="input-text" type="text" placeholder="Введите имя" /></div>
-					<div class="form-contact__email mb-10"><input class="input-text" type="text" placeholder="Email" /></div>
-					<div class="form-contact__message"><textarea class="textarea" type="text" placeholder="Сообщение"></textarea></div>
+
+					<?php include( ROOT . "templates/_parts/_errors.tpl")?>
+					<?php include( ROOT . "templates/_parts/_success.tpl")?>
+
+					<div class="form-contact__name">
+						<input class="input-text" type="text" placeholder="Введите имя" name="name" 
+						value="<?=(@trim($_POST['name']) != '') ? $_POST['name'] : '' ?>" />
+					</div>
+					<div class="form-contact__email mb-10">
+						<input class="input-text" type="text" placeholder="Email" name="email"
+						value="<?=(@trim($_POST['email']) != '') ? $_POST['email'] : '' ?>" />
+					</div>
+					<div class="form-contact__message">
+						<textarea class="textarea" type="text" placeholder="Сообщение" name="message"><?=(@trim($_POST['message']) != '') ? trim($_POST['message']) : '' ?></textarea>
+					</div>
 					<div class="form-contact__load-file">
 						<div class="load-file-title">Прикрепить файл </div>
-						<div class="load-file-opis">jpg, png, pdf, doc, весом до 2Мб.</div>
-						<div class="load-file-fieldset"><input class="inputfile inputfile-rad" id="file" type="file" name="file" data-multiple-caption="{count} файлов выбрано" multiple="" /><label for="file">Выбрать файл</label><span>Файл не выбран</span></div>
+						<div class="load-file-opis">jpg, png, pdf, doc весом до 4Мб.</div>
+						<div class="load-file-fieldset">
+							<input class="inputfile inputfile-rad" id="file" type="file" name="file" data-multiple-caption="{count} файлов выбрано" multiple="" />
+							<label for="file">Выбрать файл</label>
+							<span>Файл не выбран</span>
+						</div>
 					</div>
-					<div class="form-contact__save"><input class="button button-save" type="submit" value="Отправить" name="name" /></div>
+					<div class="form-contact__save">
+						<input class="button button-save" type="submit" value="Отправить" name="newMessage" />
+					</div>
 				</form>
 			</div>
 		</div>

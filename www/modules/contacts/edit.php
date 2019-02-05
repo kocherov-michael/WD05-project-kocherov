@@ -12,7 +12,7 @@ $contacts = R::load('contacts', 1);
 if (isset($_POST['contactsUpdate'])) {
 	if (trim($_POST['email']) == '' ) {
 		$errors[] = ['title' =>'Введите Email' ];
-	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", $_POST['email'])) {
+	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", trim($_POST['email']))) {
 		$errors[] = ['title' => 'Email указан некорректно'];
 	}
 	if (trim($_POST['phone']) == '' ) {

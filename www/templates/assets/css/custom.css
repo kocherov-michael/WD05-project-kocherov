@@ -161,3 +161,18 @@ body::before {
         margin-bottom: 50px;
     }
 }
+.message-date-container {
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+}
+.message-delete-button {
+    position: static;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+.admin-panel-menu__link {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

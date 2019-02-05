@@ -10,7 +10,7 @@ function dataFromPost($fieldName){
 	<div class="container user-content pt-70">
 		<h1 class="title-1">Редактировать данные</h1>
 
-		<?php require ROOT . "templates/_parts/_errors.tpl"?>
+		<?php include( ROOT . "templates/_parts/_errors.tpl")?>
 
 		<form action="<?=HOST?>contacts-edit" method="POST" class="contacts-edit-form">
 			<div class="row contacts-edit-form__row">

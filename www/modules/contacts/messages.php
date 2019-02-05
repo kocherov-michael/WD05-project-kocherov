@@ -5,6 +5,8 @@ if (!isAdmin()) {
 }
 $title = "Контакты";
 
+$messages = R::find('messages', 'ORDER BY id DESC');
+
 //Контент для центральной части
 ob_start();//запускаем буферизацию
 include ROOT . "templates/_parts/_header.tpl";

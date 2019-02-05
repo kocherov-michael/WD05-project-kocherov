@@ -69,9 +69,6 @@ if (isset($_POST['profile-update'])) {
 			//получаем последний элемент массива
 			$fileExt = end($kaboom);
 
-			
-			
-
 			//Проверяем установлен ли аватар у пользователя
 			$avatar = $user->avatar;
 			$avatarFolderLocation = ROOT . 'usercontent/avatar/';
