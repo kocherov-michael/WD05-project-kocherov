@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	// $(".left-panel").customScrollbar({preventDefaultScroll: true});
 	// Проверка формы регистрации
 	$('.button--registration').on('click', function(e){
@@ -154,120 +153,132 @@ $(document).ready(function() {
 		}
 	});
 
-//Скрываем уведомления
-setTimeout(function(){
-	$('[data-notify-hide').slideUp(400);
-}, 2000);
-	$('[data-notify-hide').dblclick(function(){
-		$(this).slideUp(400);
-	})
+	//Скрываем уведомления
+	setTimeout(function(){
+		$('[data-notify-hide').slideUp(400);
+		}, 2000);
+		$('[data-notify-hide').dblclick(function(){
+			$(this).slideUp(400);
+		});
 
-
-
-//Map block
-
-function initMap() {
-
-	var zelenograd = {lat: 55.987364, lng: 37.195591};
-
-	myMap = new google.maps.Map(document.getElementById('map'), {
-
-		center: zelenograd,
-		zoom: 13,
-		styles: [
-		    {
-		        "featureType": "administrative",
-		        "elementType": "labels.text.fill",
-		        "stylers": [
-		            {
-		                "color": "#444444"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "landscape",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "color": "#f2f2f2"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "poi",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "road",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "saturation": -100
-		            },
-		            {
-		                "lightness": 45
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "road.highway",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "visibility": "simplified"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "road.arterial",
-		        "elementType": "labels.icon",
-		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "transit",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
-		        ]
-		    },
-		    {
-		        "featureType": "water",
-		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "color": "#46bcec"
-		            },
-		            {
-		                "visibility": "on"
-		            }
-		        ]
-		    }
-		]
-	});	//map
-
-	//Markers
-
-	var markerZelenograd = new google.maps.Marker({
-
-		position: zelenograd,
-
-		map: myMap,
-
-		title: 'Зеленоград',
-
-		icon: '../img/map-icon/location-icon.png'
-
+	//Проверка формы комментариев
+	$('input[data-add-comment]').on('click', function(e){
+		comment = $('textarea[data-textarea-comment]');
+		if (comment.val() == '' ) {
+			e.preventDefault();
+			$('.notify[data-error-comment-empty]').fadeIn();
+			$('.notify[data-error-comment-empty]').text('Комментарий не может быть пустым.');
+			comment.focus(function(event) {
+				$('.notify[data-error-comment-empty]').fadeOut();
+			});
+		} 
 	});
-}
+
+
+	//Map block
+
+	function initMap() {
+
+		var zelenograd = {lat: 55.987364, lng: 37.195591};
+
+		myMap = new google.maps.Map(document.getElementById('map'), {
+
+			center: zelenograd,
+			zoom: 13,
+			styles: [
+			    {
+			        "featureType": "administrative",
+			        "elementType": "labels.text.fill",
+			        "stylers": [
+			            {
+			                "color": "#444444"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "landscape",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "color": "#f2f2f2"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "poi",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "visibility": "off"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "road",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "saturation": -100
+			            },
+			            {
+			                "lightness": 45
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "road.highway",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "visibility": "simplified"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "road.arterial",
+			        "elementType": "labels.icon",
+			        "stylers": [
+			            {
+			                "visibility": "off"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "transit",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "visibility": "off"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "water",
+			        "elementType": "all",
+			        "stylers": [
+			            {
+			                "color": "#46bcec"
+			            },
+			            {
+			                "visibility": "on"
+			            }
+			        ]
+			    }
+			]
+		});	//map
+
+		//Markers
+
+		var markerZelenograd = new google.maps.Marker({
+
+			position: zelenograd,
+
+			map: myMap,
+
+			title: 'Зеленоград',
+
+			icon: '../img/map-icon/location-icon.png'
+
+		});
+	}
 });

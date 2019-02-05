@@ -1,5 +1,5 @@
 <?php 
-if (!isAdmin()) {
+if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die();
 }

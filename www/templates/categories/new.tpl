@@ -15,7 +15,6 @@
 					<div class="post-add-form-button">
 						<input class="button button-save" type="submit" value="Сохранить" name="catNew" />
 						<div class="post-add-form-button__cancel">
-							<!-- <input class="button" type="reset" name="cansel" value="Отмена" /> -->
 							<a class="button" href="<?=HOST?>blog/categories" >Отмена</a>
 						</div>
 					</div>

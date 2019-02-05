@@ -74,7 +74,7 @@
 				<form class="form-contact">
 					<div class="form-contact__title">Связаться со мной</div>
 					<div class="form-contact__name"><input class="input-text" type="text" placeholder="Введите имя" /></div>
-					<div class="form-contact__email"><input class="input-text" type="text" placeholder="Email" /></div>
+					<div class="form-contact__email mb-10"><input class="input-text" type="text" placeholder="Email" /></div>
 					<div class="form-contact__message"><textarea class="textarea" type="text" placeholder="Сообщение"></textarea></div>
 					<div class="form-contact__load-file">
 						<div class="load-file-title">Прикрепить файл </div>

@@ -72,6 +72,12 @@ switch( $uri[0]) {
 	case 'blog/post-new':
 		include "modules/blog/post-new.php";
 		break;
+	case 'blog/post-edit':
+	include "modules/blog/post-edit.php";
+		break;
+	case 'blog/post-delete':
+	include "modules/blog/post-delete.php";
+		break;
 	case 'blog/post':
 		include "modules/blog/post.php";
 		break;
