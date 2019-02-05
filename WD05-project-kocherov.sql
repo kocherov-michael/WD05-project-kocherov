@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 03 2019 г., 20:22
+-- Время создания: Фев 05 2019 г., 15:59
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -72,6 +72,33 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `phone` varchar(191) DEFAULT NULL,
+  `address` varchar(191) DEFAULT NULL,
+  `name` varchar(191) DEFAULT NULL,
+  `secondname` varchar(191) DEFAULT NULL,
+  `skype` varchar(191) DEFAULT NULL,
+  `vk` varchar(191) DEFAULT NULL,
+  `fb` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL,
+  `twitter` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `phone`, `address`, `name`, `secondname`, `skype`, `vk`, `fb`, `github`, `twitter`) VALUES
+(1, 'ko4erov@mail.ru', '+79118121182', 'Россия, Санкт-Петербург', 'Михаил', 'Кочеров', 'live:ko4erovv', 'https://vk.com/nicehoney', 'https://www.facebook.com/kocherov', 'https://github.com/kocherov-michael', '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `posts`
 --
 
@@ -124,7 +151,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `country`, `city`, `avatar`, `avatar_small`, `recovery_code`, `recovery_code_times`) VALUES
-(1, 'info@mail.com', '$2y$10$heTmw28FwdXumAi3euwfe.i.1jGJCJvSLhPIy5rhkZwJKFYAa23yG', 'admin', 'Михаил', 'Кочеров', 'Россия', 'Санкт-Петербург', '28992614.JPG', '48-28992614.JPG', '5Oe8sLaQT7fK6l4', 3),
+(1, 'info@mail.com', '$2y$10$heTmw28FwdXumAi3euwfe.i.1jGJCJvSLhPIy5rhkZwJKFYAa23yG', 'admin', 'Михаил', 'Кочеров', 'Россия', 'Санкт-Петербург', '51325073.JPG', '48-51325073.JPG', '5Oe8sLaQT7fK6l4', 3),
 (23, 'tesla@mail.com', '$2y$10$oZ.Fhm.u1dvVyAVyJlF83.fHDncF2SbDDgz6SxHuGk72hTX/UYqiK', 'user', 'Nicola', 'Tesla', 'Croatia', 'Smiljan', '30615844.png', '48-30615844.png', NULL, NULL),
 (24, 'einstein@mail.com', '$2y$10$kjuVuMjPdvWbUQ3grq/RPeJIwayTF/cnOv0mOzh0dRe6T6xqYxS4u', 'user', 'Albert', 'Einstein', 'Germany', 'Ulm', '75354919.jpg', '48-75354919.jpg', NULL, NULL),
 (25, 'lomonosov@mail.com', '$2y$10$qJ9f8NpeTe1wd6z1Ru3BGO62sIVX09iNWgmWYyX4VS0uSStRLg75.', 'user', 'Михайло', 'Ломоносов', 'Российская Империя', 'дер. Мешанинская', '64624023.jpg', '48-64624023.jpg', NULL, NULL),
@@ -132,7 +159,8 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `secondname`, `c
 (27, 'info234234@mail.com', '$2y$10$4i51Wl/VHw4ZPwkaQp/ig.xiP68MrxdbfHOYcgf.WyoncwGofBxYm', 'user', 'NULL', 'NULL', 'NULL', 'NULL', NULL, NULL, NULL, NULL),
 (28, 'info9@mail.com', '$2y$10$Cf5Clk0n3rnNtdev4uFHZOV9tqNA92ubwSg43gl.klILvcmHj.dnu', 'user', 'Кирилл', 'Толмацкий', '', '', '41549987.jpg', '48-41549987.jpg', NULL, NULL),
 (29, 'info99@mail.com', '$2y$10$Qy9Rvx8e2PEin.vkxc/7CuaCTOs1FvgWZdvC4q7C0rHVwb1Tu62i.', 'user', NULL, '', '', '', NULL, NULL, NULL, NULL),
-(30, 'info50@mail.com', '$2y$10$WlP7E4mVLC25b3zSxGvruuBvkHoeKBAxf85IOQl6Rg9BE0ibuSi4W', 'user', NULL, '', '', '', NULL, NULL, NULL, NULL);
+(30, 'info50@mail.com', '$2y$10$WlP7E4mVLC25b3zSxGvruuBvkHoeKBAxf85IOQl6Rg9BE0ibuSi4W', 'user', NULL, '', '', '', NULL, NULL, NULL, NULL),
+(31, 'info90@mail.com', '$2y$10$leuoleQO4eJJgyCPH9eOY.ugKwcRIIm6Irwy0lPXjDCT0HIhwrN/S', 'user', 'Квентин', 'Тарантино', '', '', '91845397.jpg', '48-91845397.jpg', NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -151,6 +179,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `index_foreignkey_comments_post` (`post_id`),
   ADD KEY `index_foreignkey_comments_user` (`user_id`);
+
+--
+-- Индексы таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `posts`
@@ -182,6 +216,12 @@ ALTER TABLE `comments`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT для таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
@@ -191,7 +231,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
