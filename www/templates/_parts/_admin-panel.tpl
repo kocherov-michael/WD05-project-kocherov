@@ -1,6 +1,6 @@
 <div class="admin-panel">
 	<div class="admin-panel-user">
-		<div class="avatar">
+		<div class="avatar avatar--small">
 			<?php 
 				if ($_SESSION['logged_user']['avatar_small'] != "") {?>
 					<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" />

@@ -1,12 +1,12 @@
 <div class="sign-in-user">
-	<div class="user__avatar">
 	<?php 
 		if ($_SESSION['logged_user']['avatar_small'] != "") {?>
-			<div class="avatar">
-				<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" />
+		<div class="avatar user__avatar">
+			<div class="avatar--small">
+				<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['name'] ?> <?=$_SESSION['logged_user']['secondname'] ?>"/>
 			</div>
+		</div>
 	<?php } ?>
-	</div>
 	<div class="user__desc">
 		<div class="user__text">
 			<span class="name">

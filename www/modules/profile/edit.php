@@ -25,6 +25,36 @@ if (isset($_POST['profile-update'])) {
 	}
 	$postCountry = $_POST['country'];
 	$postCity = $_POST['city'];
+
+	if (isset($_FILES['avatar']['name']) && $_FILES['avatar']['tmp_name'] != '' ) {
+		//Запишем параметры картинки в переменные
+		$fileName = $_FILES['avatar']['name'];//имя файла(с расширением)
+		$fileTmpLoc = $_FILES['avatar']['tmp_name'];//где файл временно размещён
+		$fileType = $_FILES['avatar']['type'];
+		$fileSize = $_FILES['avatar']['size'];
+		$fileErrorMsg = $_FILES['avatar']['error'];
+		//Проверяем свойства файла на различные состояния
+		//записываем высоту и ширину в переменные
+		if (@getimagesize($fileTmpLoc)) {
+			list($width, $height) = getimagesize($fileTmpLoc);
+			if ($width < 10 || $height < 10) {
+				$errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше.' ];
+			}
+		} else {
+			$errors[] = ['title' =>'Проблемы с изображением.' ];
+		}
+		
+		if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName)) {
+			$errors[] = ['title' => 'Неверный формат файла', 'desc' => '<p>Файл изображения должен быть в формате gif, jpg, png или jpeg.</p>'];
+		}
+		if ($fileSize > 4194304) {
+			$errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb.' ];
+		}
+		if ($fileErrorMsg == 1) {
+			$errors[] = ['title' =>'При загрузке изображения произошла ошибка. Повторите попытку.' ];
+		}
+	}
+
 	if ( empty($errors) ) {
 		$user->name = htmlentities($_POST['name']);
 		$user->secondname = htmlentities($_POST['secondname']);
@@ -33,35 +63,14 @@ if (isset($_POST['profile-update'])) {
 		$user->country = htmlentities($_POST['country']);
 
 		if (isset($_FILES['avatar']['name']) && $_FILES['avatar']['tmp_name'] != '' ) {
-			//Запишем параметры картинки в переменные
-			$fileName = $_FILES['avatar']['name'];//имя файла(с расширением)
-			$fileTmpLoc = $_FILES['avatar']['tmp_name'];//где файл временно размещён
-			$fileType = $_FILES['avatar']['type'];
-			$fileSize = $_FILES['avatar']['size'];
-			$fileErrorMsg = $_FILES['avatar']['error'];
+			
 			//получаем массив из разбитого по точке имени файла
 			$kaboom = explode(".", $fileName);
 			//получаем последний элемент массива
 			$fileExt = end($kaboom);
 
-			//Проверяем свойства файла на различные состояния
-			//записываем высоту и ширину в переменные
-			list($width, $height) = getimagesize($fileTmpLoc);
-			if ($width < 10 || $height < 10) {
-				$errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше.' ];
-			}
-			// $ext = pathinfo($fileName, PATHINFO_EXTENSION);
-			// if ( $ext != 'gif'|| $ext != 'jpg'|| $ext != 'png'|| $ext != 'jpeg')  {
-			// if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileExt)) {
-			if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName)) {
-				$errors[] = ['title' => 'Неверный формат файла', 'desc' => '<pФайл изображения должен быть в формате gif, jpg, png или jpeg.</p>'];
-			}
-			if ($fileSize > 4194304) {
-				$errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb.' ];
-			}
-			if ($fileErrorMsg == 1) {
-				$errors[] = ['title' =>'При загрузке изображения произошла ошибка. Повторите попытку.' ];
-			}
+			
+			
 
 			//Проверяем установлен ли аватар у пользователя
 			$avatar = $user->avatar;

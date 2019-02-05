@@ -1,26 +1,30 @@
-<?php 
+<?php
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die();
+}
 $title = "Блог - Добавить новый пост";
 
-// echo "<pre>";
-// echo print_r($_POST);
-// echo "</pre><br>";
-// echo "<pre>";
-// echo print_r($_SESSION);
-// echo "</pre>";
+//выводим из БД и сортируем по алфавиту
+$cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 if (isset($_POST['postNew'])) {
 	if (trim($_POST['postTitle']) == '' ) {
 		$errors[] = ['title' =>'Введите название поста' ];
+	} else {
+		$postPostTitle = $_POST['postTitle'];
 	}
 
 	if (trim($_POST['postText']) == '' ) {
 		$errors[] = ['title' =>'Введите текст поста' ];
+	} else {
+		$postPostText = $_POST['postText'];
 	}
-
 	if ( empty($errors) ) {
 		//Создаём новую запись в таблице posts, а также саму таблицу, если её ещё нет
 		$post = R::dispense('posts');
 		$post->title = htmlentities($_POST['postTitle']);
+		$post->cat = htmlentities($_POST['postCat']);
 		$post->text = ($_POST['postText']);
 		$post->authorId = $_SESSION['logged_user']['id'];
 		$post->dateTime = R::isoDateTime();
@@ -87,7 +91,7 @@ if (isset($_POST['postNew'])) {
 		}
 
 		R::store($post);
-		header('Location: ' . HOST . "blog");
+		header('Location: ' . HOST . "blog?result=postCreated");
 		exit();
 
 	}
