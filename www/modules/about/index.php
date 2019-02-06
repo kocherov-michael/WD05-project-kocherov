@@ -1,5 +1,9 @@
  <?php 
- $title = "Обо мне";
+ $title = "Об авторе";
+
+$about = R::load('about', 1);
+$skills = R::load('skills', 1);
+$jobs = R::find('jobs', 'ORDER BY id DESC');
 
  //Контент для центральной части
  ob_start();//запускаем буферизацию

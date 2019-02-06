@@ -79,14 +79,14 @@
 
 					<div class="form-contact__name">
 						<input class="input-text" type="text" placeholder="Введите имя" name="name" 
-						value="<?=(@trim($_POST['name']) != '') ? $_POST['name'] : '' ?>" />
+						value="<?=@$_POST['name']?>" />
 					</div>
 					<div class="form-contact__email mb-10">
 						<input class="input-text" type="text" placeholder="Email" name="email"
-						value="<?=(@trim($_POST['email']) != '') ? $_POST['email'] : '' ?>" />
+						value="<?=@$_POST['email']?>" />
 					</div>
 					<div class="form-contact__message">
-						<textarea class="textarea" type="text" placeholder="Сообщение" name="message"><?=(@trim($_POST['message']) != '') ? trim($_POST['message']) : '' ?></textarea>
+						<textarea class="textarea" type="text" placeholder="Сообщение" name="message"><?=@$_POST['message']?></textarea>
 					</div>
 					<div class="form-contact__load-file">
 						<div class="load-file-title">Прикрепить файл </div>

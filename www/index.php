@@ -45,12 +45,6 @@ switch( $uri[0]) {
 	case 'profile-edit':
 		include ROOT . "modules/profile/edit.php";
 		break;
-	case 'about':
-		include "modules/about/index.php";
-		break;
-	case 'contacts':
-		include "modules/contacts/index.php";
-		break;
 	//:::::::::::::::: CATEGORIES ::::::::::::::::::::::::
 	case 'blog/categories':
 		include "modules/categories/all.php";
@@ -95,6 +89,23 @@ switch( $uri[0]) {
 		include "modules/contacts/messages.php";
 		break;
 
+	//::::::::::::: ABOUT ::::::::::::::::
+	case 'about':
+		include "modules/about/index.php";
+		break;
+	case 'edit-text':
+		include "modules/about/edit-text.php";
+		break;
+	case 'edit-skills':
+		include "modules/about/edit-skills.php";
+		break;
+	case 'edit-jobs':
+		include "modules/about/edit-jobs.php";
+		break;
+	case 'delete-jobs':
+		include "modules/about/delete-jobs.php";
+		break;
+		
 	//::::::::::::: MAIN / OTHER ::::::::::::::::
 	default:
 		echo "404 Error";

@@ -44,8 +44,7 @@
 					</div>
 					<div class="post-add-form__textarea">
 						<label class="label"><span class="mb-10">Содержание</span>
-							<textarea id="ckEditor" class="textarea" type="text" placeholder="Введите описание" name="postText">
-								<?=(isset($postPostText)) ? $postPostText : "" ?></textarea>
+							<textarea id="ckEditor" class="textarea" type="text" placeholder="Введите описание" name="postText"><?=(isset($postPostText)) ? $postPostText : "" ?></textarea>
 							<?php include_once ROOT . "templates/_parts/_ckEditorConnect.tpl" ?>
 						</label>
 					</div>

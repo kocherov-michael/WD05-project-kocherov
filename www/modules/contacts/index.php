@@ -9,6 +9,9 @@ if (isset($_POST['newMessage'])) {
 	} else if (!preg_match("/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i", trim($_POST['email']))) {
 		$errors[] = ['title' => 'Email указан некорректно'];
 	}
+	if (trim($_POST['message']) == '' ) {
+		$errors[] = ['title' =>'Введите текст сообщения' ];
+	}
 	if (isset($_FILES['file']['name']) && $_FILES['file']['tmp_name'] != '' ) {
 		$fileName = $_FILES['file']['name'];
 		$fileTmpLoc = $_FILES['file']['tmp_name'];
@@ -70,6 +73,9 @@ if (isset($_POST['newMessage'])) {
 		R::store($message);
 
 		$success[] = ['title' => 'Сообщение было успешно отправлено!'];
+		$_POST['name'] = '';
+		$_POST['email'] = '';
+		$_POST['message'] = '';
 	}
 }
  //Контент для центральной части
