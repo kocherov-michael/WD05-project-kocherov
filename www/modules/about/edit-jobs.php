@@ -21,6 +21,12 @@ if (isset($_POST['newJob'])) {
 		$job->title = htmlentities($_POST['title']);
 		$job->description = htmlentities($_POST['description']);
 		R::store($job);
+		$jobs = R::find('jobs', 'ORDER BY id DESC');
+		// $success[] = ['title' => 'Запись успешно добавлена!'];
+		$_POST['period'] = '';
+		$_POST['title'] = '';
+		$_POST['description'] = '';
+		header('Location: ' . HOST . "edit-jobs?result=jobCreated");
 	}
 }
 

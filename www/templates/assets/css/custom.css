@@ -241,4 +241,7 @@ a.message-author--email {
     stroke: #FFCC00;
 }
 /*//indicator*/
+.mb-20 {
+    margin-bottom: 20px;
+}
 

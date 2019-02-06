@@ -3,17 +3,11 @@
 		<div class="row">
 			<div class="col-10 offset-1">
 				<div class="title-1 work-experience-title">Редактировать - Опыт работы</div>
-
-				<?php
-				if( isset($_GET['result'])) {
-					if ($_GET['result'] == 'jobDeleted' ) {?>
-						<div class="notification__error" data-notify-hide>
-							Место работы успешно удалено!
-						</div>
-					<?php } 
-				}
-				?>
-
+				
+				<?php if( isset($_GET['result'])) {
+					include ROOT . "templates/about/_results.tpl";
+				} ?>
+				
 				<?php foreach ($jobs as $job){ ?>
 					<?php include ROOT . "templates/about/_card-job-edit.tpl" ?>
 				<?php } ?>
