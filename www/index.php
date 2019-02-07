@@ -45,12 +45,6 @@ switch( $uri[0]) {
 	case 'profile-edit':
 		include ROOT . "modules/profile/edit.php";
 		break;
-	case 'about':
-		include "modules/about/index.php";
-		break;
-	case 'contacts':
-		include "modules/contacts/index.php";
-		break;
 	//:::::::::::::::: CATEGORIES ::::::::::::::::::::::::
 	case 'blog/categories':
 		include "modules/categories/all.php";
@@ -67,10 +61,10 @@ switch( $uri[0]) {
 
 	//:::::::::::::::: BLOG ::::::::::::::::::::::::
 	case 'blog':
-	include "modules/blog/index.php";
+		include "modules/blog/index.php";
 		break;
 	case 'blog/post-new':
-	include "modules/blog/post-new.php";
+		include "modules/blog/post-new.php";
 		break;
 	case 'blog/post-edit':
 	include "modules/blog/post-edit.php";
@@ -79,8 +73,39 @@ switch( $uri[0]) {
 	include "modules/blog/post-delete.php";
 		break;
 	case 'blog/post':
-	include "modules/blog/post.php";
+		include "modules/blog/post.php";
 		break;
+	//::::::::::::: CONTACTS ::::::::::::::::
+	case 'contacts':
+		include "modules/contacts/index.php";
+		break;
+	case 'contacts-edit':
+		include "modules/contacts/edit.php";
+		break;
+	case 'message-delete':
+		include "modules/contacts/message-delete.php";
+		break;
+	case 'messages':
+		include "modules/contacts/messages.php";
+		break;
+
+	//::::::::::::: ABOUT ::::::::::::::::
+	case 'about':
+		include "modules/about/index.php";
+		break;
+	case 'edit-text':
+		include "modules/about/edit-text.php";
+		break;
+	case 'edit-skills':
+		include "modules/about/edit-skills.php";
+		break;
+	case 'edit-jobs':
+		include "modules/about/edit-jobs.php";
+		break;
+	case 'delete-jobs':
+		include "modules/about/delete-jobs.php";
+		break;
+		
 	//::::::::::::: MAIN / OTHER ::::::::::::::::
 	default:
 		echo "404 Error";

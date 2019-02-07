@@ -8,7 +8,7 @@
 	<div class="container user-content pt-80 pb-120">
 		<div class="row">
 			<div class="col-10 offset-1">
-				<div class="title-1 post-add__title">Создать новую категорию</div>
+				<div class="title-1 post-add__title">Редактировать категорию</div>
 
 				<?php require ROOT . "templates/_parts/_errors.tpl"?>
 
