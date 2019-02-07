@@ -1,9 +1,6 @@
 <div class="sticky-footer-content mb-90">
 			<div class="container user-content pt-50 pl-0 pr-0">
 <?php
-//  echo "<pre>";
-// echo print_r($posts);
-// echo "</pre><br>"; 
 if( isset($_GET['result'])) {
 	include ROOT . "templates/blog/_results.tpl";
 }

@@ -1,8 +1,3 @@
-<?php 
-// echo "<pre>";
-// echo print_r($post);
-// echo "</pre><br>";
- ?>
 <div class="sticky-footer-content">
 	<div class="container user-content pt-70 make-relative">
 		<div class="row">
@@ -39,9 +34,20 @@
 				<?php endif ?>
 					<div class="blog-post__content"><?=$post['text']?></div>
 				</div>
+				
 				<div class="blog__buttons mt-30 mb-35">
-					<div class="button__arrow-wrap"><a class="button button-backward" href="#!">Назад</a><i class="fas fa-arrow-left"></i></div>
-					<div class="button__arrow-wrap"><a class="button button-forward" href="#!">Вперед</a><i class="fas fa-arrow-right"></i></div>
+					<div class="button__arrow-wrap">
+					<?php if ( $prevId != '' ) { ?>
+						<a class="button button-backward" href="<?=HOST?>blog/post?id=<?=$prevId?>">Назад</a>
+						<i class="fas fa-arrow-left"></i>
+					<?php } ?>
+					</div>
+					<div class="button__arrow-wrap">
+					<?php if ( $nextId != '' ) { ?>
+						<a class="button button-forward" href="<?=HOST?>blog/post?id=<?=$nextId?>">Вперед</a>
+						<i class="fas fa-arrow-right"></i>
+					<?php } ?>
+					</div>
 				</div>
 
 				<?php if ( count($comments) > 0 ) { ?>
