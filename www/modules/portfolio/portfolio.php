@@ -26,10 +26,11 @@ foreach ($worksId as $index => $id) {
 
 $title = $work['title'];
 
-
 //Контент для центральной части
 ob_start();//запускаем буферизацию
-// include ROOT . "templates/_parts/_header.tpl";
+if ( isAdmin() ) {
+	include ROOT . "templates/_parts/_admin-panel.tpl";
+}
 include ROOT . "templates/portfolio/portfolio-post.tpl";
 $content = ob_get_contents();//возвращаем содержимое буфера
 ob_end_clean();//заканчиваем буферизацию
