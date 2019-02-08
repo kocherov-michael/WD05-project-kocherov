@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 08 2019 г., 15:48
+-- Время создания: Фев 09 2019 г., 02:10
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -335,7 +335,7 @@ CREATE TABLE `works` (
 
 INSERT INTO `works` (`id`, `title`, `cat`, `text`, `result`, `technologies`, `author_id`, `date_time`, `post_img`, `post_img_small`, `project_link`, `github_link`, `update_time`) VALUES
 (7, 'Проект Органика', 11, 'Верстка учебного макета для освоения разметки и базовых навыков вёрстки.', '', 'HTML<br>\r\nCSS', 1, '2019-02-08 15:00:00', '-96253393.jpg', '320--96253393.jpg', '', '', '2019-02-08 15:26:10'),
-(8, 'Макет Appolo', 11, 'Учебный макет, построенный на сетке Bootstrap.\r\nМобильная вёрстка под планшеты и смартфоны.', '', 'HTML<br>\r\nCSS<br>\r\nBootstrap<br>\r\njQuery<br>\r\nwow-js<br>', 1, '2019-02-08 15:12:41', '-514138291.jpg', '320--514138291.jpg', '', '', '2019-02-08 15:26:43'),
+(8, 'Макет Appolo', 11, 'Учебный макет, построенный на сетке Bootstrap.\r\nМобильная вёрстка под планшеты и смартфоны.', '', 'HTML<br>\r\nCSS<br>\r\nBootstrap<br>\r\njQuery<br>\r\nwow-js<br>', 1, '2019-02-08 15:12:41', '-48754344.jpg', '320--48754344.jpg', '', '', '2019-02-09 01:51:21'),
 (9, 'Сайт портфолио', 11, 'Персональный сайт портфолио с резюме и работами по вёрстке.', '', 'HTML\r\nCSS\r\nJS\r\nBootstrap\r\nfancybox\r\njquery\r\nwow-js', 1, '2019-02-08 15:18:09', '620146131.jpg', '320-620146131.jpg', '', '', '2019-02-08 15:19:04'),
 (10, 'Страница инстаграмма', 11, 'Страница сделана на интенсиве Webcademy.ru с целью освоения навыков работы с git, gulp и JS.', '', 'HTML<br>\r\nCSS<br>\r\nGit<br>\r\nGulp<br>\r\nJS<br>\r\njQuery<br>', 1, '2019-02-08 15:43:42', '797214998.jpg', '320-797214998.jpg', '', '', NULL);
 
@@ -482,7 +482,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

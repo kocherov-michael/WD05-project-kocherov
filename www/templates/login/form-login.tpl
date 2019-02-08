@@ -7,10 +7,10 @@
 	<div class="notify2 mb-20 notification__error hidden"></div>
 	
 	<div class="registration-form__email login-page-form__row">
-		<input name="email" class="input-text" type="email" placeholder="E-mail" value="info@mail.com" />
+		<input name="email" class="input-text" type="email" placeholder="E-mail" />
 	</div>
 	<div class="registration-form__password login-page-form__row">
-		<input name="password" class="input-text" type="password" placeholder="Пароль" value="123456"/>
+		<input name="password" class="input-text" type="password" placeholder="Пароль" />
 	</div>
 	<div class="password-remember-wrapper">
 		<div class="registration-form__remember">
