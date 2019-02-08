@@ -1,9 +1,6 @@
 <div class="sticky-footer-content mb-90">
 			<div class="container user-content pt-50 pl-0 pr-0">
 <?php
-//  echo "<pre>";
-// echo print_r($posts);
-// echo "</pre><br>"; 
 if( isset($_GET['result'])) {
 	include ROOT . "templates/blog/_results.tpl";
 }
@@ -14,11 +11,15 @@ if( isset($_GET['result'])) {
 					<a class="button button-edit" href="<?=HOST?>blog/post-new">Добавить пост</a>
 					<?php } ?>
 				</div>
-				<div class="row blog-card-row">
+				<div class="row blog-card-row mb-0">
 				<?php foreach ($posts as $post) {?>
 					<?php include ROOT . "templates/_parts/_blog-card.tpl" ?>
 				<?php }  ?>
-
+				</div>
+				<div class="row">
+					<div class="pagination">
+						<?php include ROOT . "templates/_parts/_pagination.tpl" ?>
+					</div>
 				</div>
 			</div>
 		</div>

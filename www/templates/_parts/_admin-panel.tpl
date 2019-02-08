@@ -21,9 +21,9 @@
 		<a class="admin-panel-menu__link" href="<?=HOST?>blog/categories">
 			<i class="fas fa-folder admin-panel-menu__icon"></i>Категории</a>
 
-		<a class="admin-panel-menu__link" href="works-add.html">
+		<a class="admin-panel-menu__link" href="<?=HOST?>portfolio/portfolio-new">
 			<i class="fas fa-plus-circle admin-panel-menu__icon"></i>Работа</a>
-		<a class="admin-panel-menu__link" href="edit-about-me.html">
+		<a class="admin-panel-menu__link" href="<?=HOST?>about">
 			<i class="fas fa-edit admin-panel-menu__icon"></i>Обо мне</a>
 		<a class="admin-panel-menu__link" href="<?=HOST?>contacts">
 			<i class="fas fa-edit admin-panel-menu__icon"></i>Контакты</a>

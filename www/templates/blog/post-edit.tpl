@@ -1,12 +1,3 @@
-<?php 
-// echo "<pre>";
-// echo print_r($post);
-// echo "</pre><br>";
-// echo "<pre>";
-// echo print_r($cats);
-// echo "</pre>";
-?>
-
 <div class="sticky-footer-content">
 	<div class="container user-content pt-80 pb-120">
 		<div class="row">
@@ -14,6 +5,11 @@
 				<div class="title-1 post-add__title">Редактировать пост</div>
 
 				<?php require ROOT . "templates/_parts/_errors.tpl"?>
+				<?php if (@$_GET['result'] == 'pictureDeleted' ) {?>
+					<div class="notification__error" data-notify-hide>
+						Изображение удалено!
+					</div>
+				<?php } ?>
 
 				<form action="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" method="POST" enctype="multipart/form-data" class="post-add-form">
 					<div class="post-add-form__name">
@@ -52,7 +48,7 @@
 								<img class="load-file-wrap-img__image" src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="foto" />
 							</div>
 							<div class="load-file-wrap__button">
-								<a class="button button-delete button-small" href="#!">Удалить</a>
+								<input class="button button-delete button-small" type="submit" name="pictureDelete" value="Удалить">
 							</div>
 						</div>
 					<?php } ?>

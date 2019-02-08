@@ -123,5 +123,26 @@ function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8'){
 	$result = mb_substr($temp, 0, $spacePosition, $encoding ) . "...";
 	return $result;
 }
+function pagination($results_per_page, $type) {
+		//получаем количество записей, сохранённых в БД
+        $number_of_results = R::count($type);
+        //определяем количество страниц для отображения записей
+        //округляем в бОльшую сторону
+        $number_of_pages = ceil($number_of_results / $results_per_page);
+        //определяем на какой странице пользователь
+        if(!isset($_GET['page'])) {
+            $page_number = 1;
+        } else {
+            $page_number = $_GET['page'];
+        }
+        //определяем sql LIMIT начальное число для отображения результатов на каждой странице
+        $starting_limit_number = ($page_number - 1) * $results_per_page;
+        //получаем выбранные результаты из БД и отображаем их на страниуце
+        $sql_pages_limit = 'LIMIT ' . $starting_limit_number . ',' . $results_per_page;
+        $result['number_of_pages'] = $number_of_pages;
+        $result['page_number'] = $page_number;
+        $result['sql_pages_limit'] = $sql_pages_limit;
+        return $result;
+}
 
 ?>

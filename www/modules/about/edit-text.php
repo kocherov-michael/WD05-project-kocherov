@@ -14,6 +14,34 @@ if (isset($_POST['textUpdate'])) {
 	if (trim($_POST['description']) == '' ) {
 		$errors[] = ['title' =>'Введите описание' ];
 	}
+	if (isset($_FILES['photo']['name']) && $_FILES['photo']['tmp_name'] != '' ){
+		$fileName = $_FILES['photo']['name'];
+		$fileTmpLoc = $_FILES['photo']['tmp_name'];
+		$fileType = $_FILES['photo']['type'];
+		$fileSize = $_FILES['photo']['size'];
+		$fileErrorMsg = $_FILES['photo']['error'];
+
+		if (@getimagesize($fileTmpLoc)) {
+			list($width, $height) = getimagesize($fileTmpLoc);
+			if ($width < 10 || $height < 10) {
+				$errors[] = ['title' =>'Изображение не имеет размеров. Загрузите изображение побольше.' ];
+			}
+		} else {
+			$errors[] = ['title' =>'Проблемы с изображением.' ];
+		}
+
+		if ($fileSize > 4194304) {
+			$errors[] = ['title' =>'Файл изображения не болжен быть более 4 Mb.' ];
+		}
+
+		if (!preg_match("/\.(gif|jpg|png|jpeg)$/i", $fileName)) {
+			$errors[] = ['title' => 'Неверный формат файла', 'desc' => '<p>Файл изображения должен быть в формате gif, jpg, png или jpeg.</p>'];
+		}
+
+		if ($fileErrorMsg == 1) {
+			$errors[] = ['title' =>'При загрузке изображения произошла ошибка. Повторите попытку.' ];
+		}
+	}
 	if ( empty($errors) ) {
 		// $about = R::dispense('about');
 		$about->name = htmlentities($_POST['name']);
