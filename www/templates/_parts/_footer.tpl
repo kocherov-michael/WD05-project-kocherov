@@ -18,7 +18,13 @@
 				</div>
 			</div>
 			<div class="col-md-4 footer-column">
-				<div class="footer__social-icons"><a href="#!" target="_blank"><i class="fab fa-vk"></i></a><a href="#!" target="_blank"><i class="fab fa-twitter"></i></a><a href="#!" target="_blank"><i class="fab fa-youtube"></i></a><a href="#!" target="_blank"><i class="fab fa-instagram"></i></a><a href="#!" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+				<div class="footer__social-icons">
+					<a href="https://vk.com/nicehoney" target="_blank"><i class="fab fa-vk"></i></a>
+					<!-- <a href="#!" target="_blank"><i class="fab fa-twitter"></i></a> -->
+					<!-- <a href="#!" target="_blank"><i class="fab fa-youtube"></i></a> -->
+					<a href="https://www.instagram.com/nicehoney82/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.facebook.com/kocherov" target="_blank"><i class="fab fa-facebook-f"></i></a>
+				</div>
 			</div>
 		</div>
 	</div>

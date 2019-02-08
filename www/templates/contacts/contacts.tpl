@@ -105,5 +105,5 @@
 		</div>
 	</div>
 </div>
-<div class="map" id="map"></div>
-<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script>
+<!-- <div class="map" id="map"></div>
+<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&amp;callback=initMap"></script> -->

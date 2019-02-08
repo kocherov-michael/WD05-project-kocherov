@@ -75,6 +75,24 @@ switch( $uri[0]) {
 	case 'blog/post':
 		include "modules/blog/post.php";
 		break;
+
+	//:::::::::::::::: PORTFOLIO ::::::::::::::::::::::::
+	case 'portfolio':
+		include "modules/portfolio/index.php";
+		break;
+	case 'portfolio/portfolio-new':
+		include "modules/portfolio/portfolio-new.php";
+		break;
+	case 'portfolio/portfolio-edit':
+	include "modules/portfolio/portfolio-edit.php";
+		break;
+	case 'portfolio/portfolio-delete':
+	include "modules/portfolio/portfolio-delete.php";
+		break;
+	case 'portfolio/portfolio':
+		include "modules/portfolio/portfolio.php";
+		break;
+
 	//::::::::::::: CONTACTS ::::::::::::::::
 	case 'contacts':
 		include "modules/contacts/index.php";

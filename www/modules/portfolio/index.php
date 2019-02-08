@@ -1,15 +1,15 @@
 <?php 
-$pagination = pagination(3, 'posts');
+$pagination = pagination(3, 'works');
 
-$title = "Блог - все записи";
+$title = "Портфолио - все записи";
 
 //Получаем из БД посты в порядке, при котором последние посты отображаются вверху
-$posts = R::find('posts', 'ORDER BY id DESC ' . $pagination['sql_pages_limit'] );
+$works = R::find('works', 'ORDER BY id DESC ' . $pagination['sql_pages_limit'] );
 
 //Контент для центральной части
 ob_start();//запускаем буферизацию
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/blog/blog-all-posts.tpl";
+include ROOT . "templates/portfolio/portfolio-all-works.tpl";
 $content = ob_get_contents();//возвращаем содержимое буфера
 ob_end_clean();//заканчиваем буферизацию
 

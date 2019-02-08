@@ -200,7 +200,7 @@ a.message-author--email {
 .work-experience-wrapper:last-child {
     margin-bottom: 0;
 }
-/*indicator*/
+/*:::::::::::indicator:::::::::*/
 .indicator {
     position: relative;
 }
@@ -240,8 +240,63 @@ a.message-author--email {
 .circle__indicator--yellow{
     stroke: #FFCC00;
 }
-/*//indicator*/
+/*:::::::::://indicator::::::::::*/
 .mb-20 {
     margin-bottom: 20px;
 }
-
+/*:::::::::::Pagination:::::::::*/
+.pagination {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pagination__item {
+    background: none repeat scroll 0 0 #eee;
+    color: #222;
+    height: 42px;
+    line-height: 1;
+    text-decoration: none;
+    padding: 13px 18px 6px;
+    -webkit-border-radius: 6px;
+            border-radius: 6px;
+    margin: 0 10px;
+    -webkit-transition: all 0.2s ease-in;
+       -moz-transition: all 0.2s ease-in;
+        -ms-transition: all 0.2s ease-in;
+         -o-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+}
+.pagination__item:hover {
+    background-color: #3866c5;
+    color: #FFF;
+}
+.pagination__item:active, .pagination__item--active {
+    background-color: #0060cf;
+    color: #FFF;
+}
+.buttons-navigation {
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+}
+.buttons-navigation .fa-arrow-left {
+    right: 93px;
+}
+.logo-wrapper {
+    height: auto;
+    padding-bottom: 0;
+}
+.blog-post__heading-button .blog-post__title {
+    font-size: 36px;
+}
+.description-about {
+    line-height: 1.5;
+}

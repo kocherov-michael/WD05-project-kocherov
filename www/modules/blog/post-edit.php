@@ -115,6 +115,25 @@ if (isset($_POST['postUpdate'])) {
 	}
 }
 
+$delimg = $post['post_img'];
+if ( isset($_POST['pictureDelete']) ) {
+	$blogImgFolderLocation = ROOT . 'usercontent/blog/';
+
+	// Если картинка уже установлена, то удаляем файл
+	if ( $delimg != "" ) {
+		$picurl = $blogImgFolderLocation . $delimg;
+	    if ( file_exists($picurl) ) { unlink($picurl); }
+		$picurl320 = $blogImgFolderLocation . '320-' . $delimg;
+	    if ( file_exists($picurl320) ) { unlink($picurl320); }
+	}
+
+	$post->post_img = NULL;
+	$post->post_img_small = NULL;
+	R::store($post);
+	header('Location: ' . HOST . "blog/post-edit?id=" . $post['id'] . "&result=pictureDeleted");
+	exit();
+
+}
 
 //Контент для центральной части
 ob_start();//запускаем буферизацию
